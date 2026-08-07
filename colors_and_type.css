@@ -1,0 +1,241 @@
+/* ============================================================
+   ALAN BACIOR — COLORS & TYPE
+   Subconscious Transformation Coach
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+/* Loaded via Google Fonts (see <link> in index.html <head>).      */
+/*   Montserrat Bold   700 — display headlines                    */
+/*   Montserrat Medium 500 — eyebrows / subheads (UPPERCASE)      */
+/*   Inter Regular     400 — body                                  */
+
+:root {
+  /* ---------- Brand palette (raw tokens) ---------- */
+  --c-sand:        #E0E4DA;   /* warm neutral, default page bg */
+  --c-ivory:       #F6F4F0;   /* lightest neutral, cards/elevated bg */
+  --c-sage-gray:   #A6ADA2;   /* muted divider / secondary */
+  --c-graphite:    #393E3B;   /* dark sections, body on light */
+  --c-charcoal:    #1C1F1E;   /* near-black, headings, dark mode bg */
+  --c-mist-green:  #6F7F74;   /* sole accent — buttons, pills, links */
+
+  /* Extended supportive shades (derived, used sparingly) */
+  --c-mist-green-700: #5A6960; /* hover/pressed mist green */
+  --c-mist-green-200: #C7D0C9; /* subtle tinted backgrounds */
+  --c-sand-200:       #EFEFE7; /* hairline-lighter than sand */
+  --c-graphite-700:   #2A2E2C;
+  --c-ivory-pressed:  #ECE9E2;
+
+  /* ---------- Semantic — light mode (default) ---------- */
+  --bg:        var(--c-sand);
+  --bg-elev:   var(--c-ivory);
+  --bg-sunken: var(--c-sand-200);
+
+  --fg:        var(--c-charcoal);   /* primary text */
+  --fg-muted:  var(--c-graphite);   /* secondary text, paragraphs */
+  --fg-subtle: var(--c-sage-gray);  /* eyebrow / metadata */
+
+  --border:        rgba(28, 31, 30, 0.10);
+  --border-strong: rgba(28, 31, 30, 0.22);
+  --divider:       var(--c-sage-gray);
+
+  --accent:        var(--c-mist-green);
+  --accent-hover:  var(--c-mist-green-700);
+  --accent-soft:   var(--c-mist-green-200);
+  --on-accent:     var(--c-ivory);
+
+  /* ---------- Type scale ---------- */
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-sub:     "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* Sizes – designed against generous whitespace, large headlines */
+  --fs-display-1: clamp(56px, 8.5vw, 128px);
+  --fs-display-2: clamp(40px, 6vw, 88px);
+  --fs-h1:        clamp(34px, 4.4vw, 64px);
+  --fs-h2:        clamp(26px, 3.2vw, 44px);
+  --fs-h3:        22px;
+  --fs-h4:        17px;
+  --fs-eyebrow:   13px;
+  --fs-body:      17px;
+  --fs-small:     14px;
+  --fs-micro:     12px;
+
+  /* Tracking — letter-spacing is a SIGNATURE of this brand */
+  --tr-eyebrow:    0.28em;   /* very airy, used for "SUBCONSCIOUS TRANSFORMATION COACH" */
+  --tr-sub:        0.18em;
+  --tr-display:    -0.005em;
+  --tr-body:       0;
+
+  --lh-display: 1.04;
+  --lh-heading: 1.12;
+  --lh-body:    1.55;
+
+  /* ---------- Spacing scale (4pt-based) ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  /* ---------- Radii ---------- */
+  --r-xs:    4px;
+  --r-sm:    8px;
+  --r-md:    14px;   /* default card radius */
+  --r-lg:    20px;
+  --r-pill:  999px;
+
+  /* ---------- Shadows (very restrained) ---------- */
+  --shadow-1: 0 1px 2px rgba(28,31,30,0.04), 0 1px 1px rgba(28,31,30,0.03);
+  --shadow-2: 0 12px 32px -16px rgba(28,31,30,0.18), 0 2px 6px rgba(28,31,30,0.04);
+  --shadow-3: 0 28px 60px -24px rgba(28,31,30,0.28), 0 4px 12px rgba(28,31,30,0.06);
+
+  /* ---------- Motion ---------- */
+  --ease-soft:  cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:   180ms;
+  --dur-base:   320ms;
+  --dur-slow:   620ms;
+
+  /* ---------- Layout ---------- */
+  --max-w:    1280px;
+  --gutter:   clamp(20px, 4vw, 72px);
+}
+
+/* ---------- Dark / introspective mode ---------- */
+:root[data-theme="dark"],
+.theme-dark {
+  --bg:        var(--c-charcoal);
+  --bg-elev:   var(--c-graphite);
+  --bg-sunken: #14171580;
+
+  --fg:        var(--c-ivory);
+  --fg-muted:  #C9CDC6;
+  --fg-subtle: var(--c-sage-gray);
+
+  --border:        rgba(246, 244, 240, 0.10);
+  --border-strong: rgba(246, 244, 240, 0.20);
+  --divider:       rgba(246, 244, 240, 0.18);
+
+  --accent:        var(--c-mist-green);
+  --accent-hover:  #84948A;
+  --accent-soft:   rgba(111,127,116,0.22);
+  --on-accent:     var(--c-ivory);
+}
+
+/* ============================================================
+   Semantic base elements
+   ============================================================ */
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display / hero — the headline driver of the brand */
+.display-1, h1.hero {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display-1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-display);
+  color: var(--fg);
+  text-wrap: balance;
+}
+.display-2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display-2);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tr-display);
+  color: var(--fg);
+  text-wrap: balance;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tr-display);
+  color: var(--fg);
+  text-wrap: balance;
+}
+h3, .h3 {
+  font-family: var(--font-sub);
+  font-weight: 500;
+  font-size: var(--fs-h3);
+  line-height: 1.25;
+  color: var(--fg);
+}
+h4, .h4 {
+  font-family: var(--font-sub);
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  line-height: 1.3;
+  color: var(--fg);
+}
+
+/* "ALIGNMENT THAT TRANSFORMS." style — airy uppercase subhead */
+.eyebrow {
+  font-family: var(--font-sub);
+  font-weight: 400;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+.subhead {
+  font-family: var(--font-sub);
+  font-weight: 500;
+  font-size: clamp(14px, 1.2vw, 18px);
+  letter-spacing: var(--tr-sub);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+p, .body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-muted);
+  text-wrap: pretty;
+  max-width: 62ch;
+}
+.small  { font-size: var(--fs-small);  line-height: 1.5; }
+.micro  { font-size: var(--fs-micro);  line-height: 1.5; }
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: opacity var(--dur-fast) var(--ease-soft);
+}
+a:hover { opacity: 0.66; }
+
+hr, .divider {
+  border: 0;
+  border-top: 1px solid var(--divider);
+  margin: var(--s-6) 0;
+}
+
+/* Selection */
+::selection { background: var(--c-mist-green); color: var(--c-ivory); }
