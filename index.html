@@ -1,693 +1,570 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="meta.title">Alan Bacior — Subconscious Transformation Coach</title>
-  <meta name="description" content="You already know what needs to change. Something inside keeps stopping you. I work directly with the subconscious — hypnosis and kinesiology — to go to the root of what's holding you back, and change it there." />
-
-  <!-- Open Graph / social sharing -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Alan Bacior — Subconscious Transformation Coach" />
-  <meta property="og:description" content="Not just talking about the past. Actually changing it. 1:1 subconscious transformation work. Book a free 30-minute call." />
-  <meta property="og:image" content="assets/alan-portrait.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="icon" href="assets/logo-ab-black.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/colors_and_type.css" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; }
-    img { display: block; max-width: 100%; }
-
-    /* CTAs ------------------------------------------------------- */
-    .cta-primary {
-      display: inline-flex; align-items: center; gap: 18px;
-      font-family: var(--font-sub); font-weight: 500; font-size: 12px;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      color: var(--c-ivory); background: var(--c-mist-green);
-      border: 0; border-radius: 14px; padding: 18px 28px; cursor: pointer;
-      text-decoration: none;
-      transition: background 180ms var(--ease-soft), transform 90ms;
-    }
-    .cta-primary:hover { background: var(--c-mist-green-700); opacity: 1; }
-    .cta-primary .arrow {
-      font-family: var(--font-body); letter-spacing: 0; font-size: 18px;
-      line-height: 1; transition: transform 220ms var(--ease-soft);
-    }
-    .cta-primary:hover .arrow { transform: translateX(3px); }
-
-    .cta-ghost {
-      font-family: var(--font-sub); font-weight: 500; font-size: 12px;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      color: var(--c-charcoal); background: transparent; border: 0;
-      padding: 18px 4px; cursor: pointer;
-      border-bottom: 1px solid var(--c-charcoal); text-decoration: none;
-    }
-    .cta-ghost.dark { color: var(--c-ivory); border-bottom-color: var(--c-ivory); }
-
-    .cta-outline {
-      font-family: var(--font-sub); font-weight: 500; font-size: 12px;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      color: var(--c-charcoal); text-decoration: none;
-      border: 1px solid var(--c-charcoal); border-radius: 14px;
-      padding: 16px 22px; text-align: center; margin-top: 8px;
-      transition: background 180ms var(--ease-soft);
-    }
-    .cta-outline:hover { background: var(--c-charcoal); color: var(--c-ivory); opacity: 1; }
-
-    .cta-filled {
-      font-family: var(--font-sub); font-weight: 500; font-size: 12px;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      color: var(--c-ivory); text-decoration: none; background: var(--c-mist-green);
-      border-radius: 14px; padding: 18px 22px; text-align: center; margin-top: 8px;
-      transition: background 180ms var(--ease-soft);
-    }
-    .cta-filled:hover { background: var(--c-mist-green-700); opacity: 1; }
-
-    a.nav-link, a.header-book { transition: opacity 180ms var(--ease-soft); }
-    a.nav-link:hover, a.header-book:hover { opacity: 0.66; }
-
-    /* Language switch ------------------------------------------- */
-    .lang-switch {
-      display: inline-flex; align-items: center;
-      border: 1px solid rgba(28,31,30,0.22); border-radius: 999px;
-      overflow: hidden;
-    }
-    .lang-switch button {
-      font-family: var(--font-sub); font-size: 10px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--c-graphite);
-      background: transparent; border: 0; padding: 8px 12px; cursor: pointer;
-      transition: background 160ms var(--ease-soft), color 160ms var(--ease-soft);
-    }
-    .lang-switch button[aria-pressed="true"] {
-      background: var(--c-mist-green); color: var(--c-ivory);
-    }
-
-    .eyebrow-line {
-      font-family: var(--font-sub); font-weight: 500; font-size: 12px;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      display: inline-flex; align-items: center; gap: 14px;
-      color: var(--c-sage-gray);
-    }
-    .eyebrow-line.dark { color: rgba(246,244,240,0.62); }
-    .eyebrow-line::before {
-      content: ""; display: inline-block; width: 28px; height: 1px;
-      background: currentColor; opacity: 0.6;
-    }
-
-    /* Grids — responsive ---------------------------------------- */
-    .hero-grid   { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(40px,6vw,96px); align-items: center; }
-    .split-grid  { display: grid; grid-template-columns: 0.9fr 1.1fr;  gap: clamp(40px,6vw,96px); align-items: start; }
-    .who-grid    { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(40px,6vw,96px); align-items: start; }
-    .about-grid  { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(40px,6vw,96px); align-items: center; }
-    .offers-grid { display: grid; grid-template-columns: 1fr 1.15fr;    gap: 24px; align-items: stretch; }
-    .cols-3      { display: grid; grid-template-columns: repeat(3,1fr);  gap: 24px; }
-    .cols-3.tight{ gap: 20px; }
-    .method-diffs{ display: grid; grid-template-columns: repeat(3,1fr);  gap: 36px; }
-    .step-row    { display: grid; grid-template-columns: repeat(4,1fr);  gap: 0; }
-    .trust-grid  { display: grid; grid-template-columns: repeat(4,1fr);  gap: 32px; align-items: start; }
-
-    @media (max-width: 960px) {
-      .hero-grid, .split-grid, .who-grid, .about-grid, .offers-grid { grid-template-columns: 1fr; }
-      .who-sticky { position: static !important; }
-      .main-nav { display: none !important; }
-    }
-    @media (max-width: 720px) {
-      .cols-3, .method-diffs, .step-row, .trust-grid { grid-template-columns: 1fr 1fr; }
-      .step-row > div { border-right: none !important; border-bottom: 1px solid rgba(246,244,240,0.12); }
-    }
-    @media (max-width: 480px) {
-      .cols-3, .method-diffs, .trust-grid { grid-template-columns: 1fr; }
-      .header-book { display: none !important; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alan Bacior | Coach für Frauen in emotionalen Krisen</title>
+<meta name="description" content="Wenn dir gerade alles zu viel ist: 1:1-Begleitung für Frauen nach Trennungen, in Beziehungskrisen und unter Dauerbelastung. Online, mit Arbeit am Unterbewusstsein. Kostenfreies Klarheits-Gespräch.">
+<link rel="canonical" href="https://www.alanbacior.de/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wenn dir gerade alles zu viel ist.">
+<meta property="og:description" content="1:1-Begleitung für Frauen in emotionalen Krisen. Online, im ganzen deutschsprachigen Raum. Kostenfreies Klarheits-Gespräch.">
+<meta property="og:url" content="https://www.alanbacior.de/">
+<meta property="og:image" content="https://www.alanbacior.de/assets/img/og-image.jpg">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F6F0EA">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/styles.css?v=202610161206">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Bacior","jobTitle":"Coach","url":"https://www.alanbacior.de/","sameAs":["https://www.instagram.com/alanbacior/"]}</script>
 </head>
 <body>
-  <div id="root">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-    <!-- ============================ HEADER ============================ -->
-    <header style="position:sticky; top:0; z-index:50; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); background:rgba(224,228,218,0.78); border-bottom:1px solid rgba(28,31,30,0.06);">
-      <div style="display:flex; align-items:center; justify-content:space-between; max-width:1280px; margin:0 auto; padding:18px clamp(20px,4vw,72px);">
-        <a href="#top" style="display:flex; align-items:center; gap:14px; text-decoration:none; border:0;">
-          <img src="assets/logo-ab-black.png" alt="AB" style="height:26px; width:auto;" />
-          <span style="font-family:var(--font-display); font-weight:500; font-size:13px; letter-spacing:0.32em; color:var(--c-charcoal); text-transform:uppercase;">Alan Bacior</span>
-        </a>
-        <nav class="main-nav" style="display:flex; align-items:center; gap:32px;">
-          <a class="nav-link" data-i18n="nav.problem" href="#problem" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-graphite); text-decoration:none; border:0;">The problem</a>
-          <a class="nav-link" data-i18n="nav.method" href="#method" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-graphite); text-decoration:none; border:0;">The method</a>
-          <a class="nav-link" data-i18n="nav.work" href="#offers" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-graphite); text-decoration:none; border:0;">Work with me</a>
-          <a class="nav-link" data-i18n="nav.about" href="#about" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-graphite); text-decoration:none; border:0;">About</a>
-        </nav>
-        <div style="display:flex; align-items:center; gap:16px;">
-          <div class="lang-switch" role="group" aria-label="Language">
-            <button type="button" data-lang="en" aria-pressed="true">EN</button>
-            <button type="button" data-lang="de" aria-pressed="false">DE</button>
-          </div>
-          <a class="header-book" data-i18n="header.book" href="https://calendly.com/alanbacior/1-1-mentoring-free-call?month=2026-05" target="_blank" rel="noopener noreferrer" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-charcoal); background:transparent; border:1px solid rgba(28,31,30,0.22); border-radius:999px; padding:10px 20px; text-decoration:none;">Book a call</a>
-        </div>
-      </div>
-    </header>
-
-    <!-- ============================ HERO ============================ -->
-    <section id="top" style="background:var(--c-sand); padding:clamp(64px,9vw,128px) clamp(20px,4vw,72px) clamp(64px,9vw,112px);">
-      <div class="hero-grid" style="max-width:1280px; margin:0 auto;">
-        <div style="display:flex; flex-direction:column; gap:24px;">
-          <h1 class="hero" data-i18n="hero.h1" style="font-family:var(--font-display); font-weight:700; font-size:clamp(34px,4.4vw,60px); line-height:1.08; letter-spacing:-0.012em; color:var(--c-charcoal); margin:0; text-wrap:balance;">
-            You already know what needs to change.<br />
-            <span style="color:var(--c-mist-green);">Something inside keeps stopping you.</span>
-          </h1>
-          <p data-i18n="hero.body" style="font-family:var(--font-body); font-size:16px; line-height:1.6; color:var(--c-graphite); max-width:480px; margin:0;">
-            You've read the books. Done the therapy. Listened to every podcast. And still — the same patterns. The same blocks. The same feeling of being stuck.<br /><br />
-            I work with people who are done with surface‑level answers. Together, we go to the root of what's actually holding you back — and we change it there.
-          </p>
-          <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap; margin-top:8px;">
-            <a class="cta-primary" href="https://calendly.com/alanbacior/1-1-mentoring-free-call?month=2026-05" target="_blank" rel="noopener noreferrer"><span data-i18n="hero.cta1">Book a free call</span> <span class="arrow">→</span></a>
-            <a class="cta-ghost" data-i18n="hero.cta2" href="#method">See how I work</a>
-          </div>
-        </div>
-        <div style="position:relative;">
-          <div style="position:relative; width:100%; aspect-ratio:4 / 5; border-radius:14px; overflow:hidden; background:linear-gradient(180deg,#C9CDC6 0%, #8E9890 100%); box-shadow:var(--shadow-3);">
-            <img src="assets/alan-portrait.jpg" alt="Alan Bacior" style="width:100%; height:100%; object-fit:cover; object-position:82% 22%; filter:saturate(0.92);" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Trust strip -->
-      <div class="trust-grid" style="max-width:1280px; margin:clamp(72px,10vw,128px) auto 0; padding-top:36px; border-top:1px solid rgba(28,31,30,0.10);">
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <span data-i18n="trust.1.l" style="font-family:var(--font-sub); font-weight:500; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-charcoal);">Hypnosis</span>
-          <span data-i18n="trust.1.s" style="font-family:var(--font-body); font-size:13px; color:var(--c-graphite); opacity:0.75;">Direct subconscious access</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <span data-i18n="trust.2.l" style="font-family:var(--font-sub); font-weight:500; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-charcoal);">Kinesiology</span>
-          <span data-i18n="trust.2.s" style="font-family:var(--font-body); font-size:13px; color:var(--c-graphite); opacity:0.75;">Body as guide</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <span data-i18n="trust.3.l" style="font-family:var(--font-sub); font-weight:500; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-charcoal);">1:1 only</span>
-          <span data-i18n="trust.3.s" style="font-family:var(--font-body); font-size:13px; color:var(--c-graphite); opacity:0.75;">No groups, no replays</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <span data-i18n="trust.4.l" style="font-family:var(--font-sub); font-weight:500; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-charcoal);">Online · worldwide</span>
-          <span data-i18n="trust.4.s" style="font-family:var(--font-body); font-size:13px; color:var(--c-graphite); opacity:0.75;">Wherever you are</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ PROBLEM ============================ -->
-    <section id="problem" style="background:var(--c-sand); padding:clamp(72px,11vw,144px) clamp(20px,4vw,72px);">
-      <div style="max-width:1280px; margin:0 auto;">
-        <div class="split-grid" style="margin-bottom:clamp(48px,7vw,96px);">
-          <div style="display:flex; flex-direction:column; gap:28px;">
-            <span class="eyebrow-line" data-i18n="problem.eyebrow">Why nothing has worked</span>
-            <h2 data-i18n="problem.h2" style="font-family:var(--font-display); font-weight:700; font-size:clamp(34px,4.8vw,64px); line-height:1.06; letter-spacing:-0.008em; margin:0; color:var(--c-charcoal); text-wrap:balance;">
-              The gap isn't knowledge.<br />
-              <span style="color:var(--c-graphite);">It's what lives beneath it.</span>
-            </h2>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:20px;">
-            <p data-i18n="problem.p1" style="font-family:var(--font-body); font-size:18px; line-height:1.6; color:var(--c-graphite); margin:0; max-width:58ch;">Most people who come to work with me have already done a lot. Coaching, therapy, self‑development — they understand what they should do. But understanding something and actually doing it are two completely different things.</p>
-            <p data-i18n="problem.p2" style="font-family:var(--font-body); font-size:18px; line-height:1.6; color:var(--c-graphite); margin:0; max-width:58ch;">The block isn't in your mind. It's in your subconscious — in moments from your past that shaped how you see yourself, what you believe you deserve, and what feels safe to do.</p>
-            <p data-i18n="problem.p3" style="font-family:var(--font-body); font-size:18px; line-height:1.6; color:var(--c-charcoal); font-weight:500; margin:0; max-width:58ch;">Talking about those moments helps. But it doesn't resolve them.</p>
-          </div>
-        </div>
-
-        <div class="cols-3 tight">
-          <article style="background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px; padding:36px 32px; display:flex; flex-direction:column; gap:20px; min-height:280px;">
-            <div style="font-family:var(--font-display); font-weight:700; font-size:14px; letter-spacing:0.18em; color:var(--c-mist-green);">01</div>
-            <h3 data-i18n="problem.c1.t" style="font-family:var(--font-display); font-weight:700; font-size:22px; line-height:1.25; letter-spacing:-0.005em; color:var(--c-charcoal); margin:0;">"I know what to do — I just can't make myself do it."</h3>
-            <p data-i18n="problem.c1.b" style="font-family:var(--font-body); font-size:15px; line-height:1.6; color:var(--c-graphite); margin:0; margin-top:auto;">You're not lazy or broken. There's a root cause. And we can find it.</p>
-          </article>
-          <article style="background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px; padding:36px 32px; display:flex; flex-direction:column; gap:20px; min-height:280px;">
-            <div style="font-family:var(--font-display); font-weight:700; font-size:14px; letter-spacing:0.18em; color:var(--c-mist-green);">02</div>
-            <h3 data-i18n="problem.c2.t" style="font-family:var(--font-display); font-weight:700; font-size:22px; line-height:1.25; letter-spacing:-0.005em; color:var(--c-charcoal); margin:0;">"I've tried everything and nothing really changes."</h3>
-            <p data-i18n="problem.c2.b" style="font-family:var(--font-body); font-size:15px; line-height:1.6; color:var(--c-graphite); margin:0; margin-top:auto;">Surface‑level work creates surface‑level results. The shift has to happen deeper.</p>
-          </article>
-          <article style="background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px; padding:36px 32px; display:flex; flex-direction:column; gap:20px; min-height:280px;">
-            <div style="font-family:var(--font-display); font-weight:700; font-size:14px; letter-spacing:0.18em; color:var(--c-mist-green);">03</div>
-            <h3 data-i18n="problem.c3.t" style="font-family:var(--font-display); font-weight:700; font-size:22px; line-height:1.25; letter-spacing:-0.005em; color:var(--c-charcoal); margin:0;">"I feel stuck — personally, professionally, in my relationships."</h3>
-            <p data-i18n="problem.c3.b" style="font-family:var(--font-body); font-size:15px; line-height:1.6; color:var(--c-graphite); margin:0; margin-top:auto;">When the internal pattern doesn't change, the external situation doesn't either. Until it does.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ METHOD (dark) ============================ -->
-    <section id="method" style="background:var(--c-charcoal); color:var(--c-ivory); padding:clamp(72px,11vw,144px) clamp(20px,4vw,72px);">
-      <div style="max-width:1280px; margin:0 auto;">
-        <div class="split-grid" style="margin-bottom:clamp(56px,8vw,96px);">
-          <div style="display:flex; flex-direction:column; gap:28px;">
-            <span class="eyebrow-line dark" data-i18n="method.eyebrow">How I work</span>
-            <h2 data-i18n="method.h2" style="font-family:var(--font-display); font-weight:700; font-size:clamp(34px,4.8vw,64px); line-height:1.06; letter-spacing:-0.008em; margin:0; color:var(--c-ivory); text-wrap:balance;">
-              Not just talking<br />about the past.<br />
-              <span style="color:var(--c-mist-green);">Actually changing it.</span>
-            </h2>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:22px;">
-            <p data-i18n="method.p1" style="font-family:var(--font-body); font-size:18px; line-height:1.65; color:rgba(246,244,240,0.82); margin:0; max-width:58ch;">I work directly with your subconscious — using tools like hypnosis and kinesiology — to reach the exact moment where a pattern started. Not to analyze it. To reprocess it at the root.</p>
-            <p data-i18n="method.p2" style="font-family:var(--font-body); font-size:18px; line-height:1.65; color:rgba(246,244,240,0.82); margin:0; max-width:58ch;">In our sessions, you don't just understand what happened. You feel the shift happen. The emotional charge releases. The pattern loses its grip. And from that point forward, the action that felt impossible becomes natural.</p>
-          </div>
-        </div>
-
-        <!-- Process diagram -->
-        <div class="step-row" style="border:1px solid rgba(246,244,240,0.12); border-radius:14px; overflow:hidden; margin-bottom:clamp(56px,8vw,88px);">
-          <div style="padding:44px 28px; background:transparent; color:var(--c-ivory); border-right:1px solid rgba(246,244,240,0.12); display:flex; flex-direction:column; gap:12px;">
-            <span data-i18n="method.step" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; opacity:0.5;">Step</span><span style="display:none"> </span>
-            <span data-i18n="method.s1" style="font-family:var(--font-display); font-weight:700; font-size:26px; letter-spacing:-0.005em; line-height:1.1;">Understand.</span>
-          </div>
-          <div style="padding:44px 28px; background:transparent; color:var(--c-ivory); border-right:1px solid rgba(246,244,240,0.12); display:flex; flex-direction:column; gap:12px;">
-            <span data-i18n="method.step" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; opacity:0.5;">Step</span>
-            <span data-i18n="method.s2" style="font-family:var(--font-display); font-weight:700; font-size:26px; letter-spacing:-0.005em; line-height:1.1;">Release.</span>
-          </div>
-          <div style="padding:44px 28px; background:transparent; color:var(--c-ivory); border-right:1px solid rgba(246,244,240,0.12); display:flex; flex-direction:column; gap:12px;">
-            <span data-i18n="method.step" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; opacity:0.5;">Step</span>
-            <span data-i18n="method.s3" style="font-family:var(--font-display); font-weight:700; font-size:26px; letter-spacing:-0.005em; line-height:1.1;">Realign.</span>
-          </div>
-          <div style="padding:44px 28px; background:var(--c-mist-green); color:var(--c-ivory); display:flex; flex-direction:column; gap:12px;">
-            <span data-i18n="method.step" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; opacity:0.85;">Step</span>
-            <span data-i18n="method.s4" style="font-family:var(--font-display); font-weight:700; font-size:26px; letter-spacing:-0.005em; line-height:1.1;">Transform.</span>
-          </div>
-        </div>
-
-        <!-- Differentiators -->
-        <div class="method-diffs">
-          <div style="display:flex; flex-direction:column; gap:18px; padding-top:28px; border-top:1px solid rgba(246,244,240,0.18);">
-            <div style="font-family:var(--font-sub); font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-mist-green);">→ 01</div>
-            <h3 data-i18n="method.d1.t" style="font-family:var(--font-display); font-weight:700; font-size:24px; line-height:1.2; letter-spacing:-0.005em; color:var(--c-ivory); margin:0;">To the source, not the surface</h3>
-            <p data-i18n="method.d1.b" style="font-family:var(--font-body); font-size:15px; line-height:1.6; color:rgba(246,244,240,0.72); margin:0;">I don't help you manage symptoms. I help you find and eliminate the root cause — so the change is real and it stays.</p>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:18px; padding-top:28px; border-top:1px solid rgba(246,244,240,0.18);">
-            <div style="font-family:var(--font-sub); font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-mist-green);">→ 02</div>
-            <h3 data-i18n="method.d2.t" style="font-family:var(--font-display); font-weight:700; font-size:24px; line-height:1.2; letter-spacing:-0.005em; color:var(--c-ivory); margin:0;">The shift happens in the session</h3>
-            <p data-i18n="method.d2.b" style="font-family:var(--font-body); font-size:15px; line-height:1.6; color:rgba(246,244,240,0.72); margin:0;">Not weeks of homework. Not gradual progress over months. You feel something change — in the room, in real time.</p>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:18px; padding-top:28px; border-top:1px solid rgba(246,244,240,0.18);">
-            <div style="font-family:var(--font-sub); font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-mist-green);">→ 03</div>
-            <h3 data-i18n="method.d3.t" style="font-family:var(--font-display); font-weight:700; font-size:24px; line-height:1.2; letter-spacing:-0.005em; color:var(--c-ivory); margin:0;">Clarity that finally makes sense</h3>
-            <p data-i18n="method.d3.b" style="font-family:var(--font-body); font-size:15px; line-height:1.6; color:rgba(246,244,240,0.72); margin:0;">I'll explain what's happening in a way you've never heard before. That moment of "this is why I've been like this" — it's part of the transformation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ WHO ============================ -->
-    <section id="who" style="background:var(--c-sand); padding:clamp(72px,11vw,144px) clamp(20px,4vw,72px);">
-      <div style="max-width:1280px; margin:0 auto;">
-        <div class="who-grid">
-          <div class="who-sticky" style="position:sticky; top:100px; border-radius:14px; overflow:hidden; aspect-ratio:4 / 5; background:linear-gradient(180deg,#A6ADA2, #4E5853); box-shadow:var(--shadow-2);">
-            <img src="assets/alan-seated.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:72% 45%; filter:saturate(0.85);" />
-          </div>
-          <div style="display:flex; flex-direction:column; gap:28px;">
-            <span class="eyebrow-line" data-i18n="who.eyebrow">Is this for you?</span>
-            <h2 data-i18n="who.h2" style="font-family:var(--font-display); font-weight:700; font-size:clamp(32px,4.4vw,56px); line-height:1.08; letter-spacing:-0.008em; margin:0; color:var(--c-charcoal); text-wrap:balance;">
-              For those who've done the work<br />
-              <span style="color:var(--c-graphite);">and are ready for what's underneath.</span>
-            </h2>
-            <p data-i18n="who.p1" style="font-family:var(--font-body); font-size:17px; line-height:1.65; color:var(--c-graphite); margin:0; max-width:58ch;">The people I work with have usually already invested in their growth — therapy, coaching, courses. They understand a lot. But the same patterns keep showing up, and they can't figure out why.</p>
-            <p data-i18n="who.p2" style="font-family:var(--font-body); font-size:17px; line-height:1.65; color:var(--c-graphite); margin:0; max-width:58ch;">They're not looking for more advice. They're not looking for motivation. They're looking for a real shift — and they're ready to do what it takes to get there.</p>
-
-            <div style="margin-top:16px; padding:32px; background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px;">
-              <div data-i18n="who.yes.title" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:var(--c-mist-green); margin-bottom:18px;">You're in the right place if</div>
-              <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:14px;">
-                <li style="display:grid; grid-template-columns:20px 1fr; gap:14px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--c-charcoal);"><span style="color:var(--c-mist-green); font-weight:700; font-family:var(--font-display); font-size:16px; line-height:1.55;">✓</span><span data-i18n="who.yes.1">You've tried therapy, coaching, or self‑development — but the same patterns keep coming back.</span></li>
-                <li style="display:grid; grid-template-columns:20px 1fr; gap:14px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--c-charcoal);"><span style="color:var(--c-mist-green); font-weight:700; font-family:var(--font-display); font-size:16px; line-height:1.55;">✓</span><span data-i18n="who.yes.2">You feel stuck in a relationship, your business, or your sense of self — and you can't pinpoint why.</span></li>
-                <li style="display:grid; grid-template-columns:20px 1fr; gap:14px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--c-charcoal);"><span style="color:var(--c-mist-green); font-weight:700; font-family:var(--font-display); font-size:16px; line-height:1.55;">✓</span><span data-i18n="who.yes.3">You know something has to change, and you're done waiting for it to happen on its own.</span></li>
-                <li style="display:grid; grid-template-columns:20px 1fr; gap:14px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--c-charcoal);"><span style="color:var(--c-mist-green); font-weight:700; font-family:var(--font-display); font-size:16px; line-height:1.55;">✓</span><span data-i18n="who.yes.4">You're willing to go deep — and ready to take full responsibility for your life.</span></li>
-              </ul>
-            </div>
-
-            <div style="padding-top:24px; border-top:1px solid rgba(28,31,30,0.12); display:flex; flex-direction:column; gap:8px;">
-              <div data-i18n="who.no.title" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:var(--c-sage-gray);">This is not for you if</div>
-              <p data-i18n="who.no.body" style="font-family:var(--font-body); font-size:15.5px; line-height:1.65; color:var(--c-graphite); margin:0; font-style:italic; max-width:58ch;">You're looking for quick motivation, someone to tell you what to do, or you're not ready to invest fully — emotionally and financially — in real transformation.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ OFFERS ============================ -->
-    <section id="offers" style="background:var(--c-sand-200); padding:clamp(72px,11vw,144px) clamp(20px,4vw,72px);">
-      <div style="max-width:1280px; margin:0 auto;">
-        <div style="display:flex; flex-direction:column; gap:24px; align-items:center; text-align:center; margin-bottom:clamp(56px,8vw,96px);">
-          <span class="eyebrow-line" data-i18n="offers.eyebrow">Work with me</span>
-          <h2 data-i18n="offers.h2" style="font-family:var(--font-display); font-weight:700; font-size:clamp(34px,4.8vw,64px); line-height:1.06; letter-spacing:-0.008em; margin:0; color:var(--c-charcoal); max-width:18ch; text-wrap:balance;">
-            Two ways in.<br />
-            <span style="color:var(--c-graphite);">Both go to the root.</span>
-          </h2>
-          <p data-i18n="offers.intro" style="font-family:var(--font-body); font-size:16px; line-height:1.6; color:var(--c-graphite); margin:0; max-width:54ch;">Not sure which one fits? Start with a free 30‑minute discovery call — we'll figure out together whether you need a single session or the full program.</p>
-        </div>
-
-        <div class="offers-grid">
-          <!-- Single session -->
-          <article style="background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px; padding:40px 36px; display:flex; flex-direction:column; gap:22px;">
-            <div style="display:flex; align-items:center; justify-content:space-between;">
-              <span data-i18n="single.label" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:var(--c-sage-gray);">Single deep‑dive session</span>
-              <span data-i18n="single.badge" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--c-graphite); border:1px solid rgba(28,31,30,0.18); padding:4px 10px; border-radius:999px;">Start here</span>
-            </div>
-            <h3 data-i18n="single.h3" style="font-family:var(--font-display); font-weight:700; font-size:32px; line-height:1.12; letter-spacing:-0.008em; color:var(--c-charcoal); margin:0; text-wrap:balance;">One session. One root.<br />One real shift.</h3>
-            <p data-i18n="single.p1" style="font-family:var(--font-body); font-size:16px; line-height:1.65; color:var(--c-graphite); margin:0;">If you have a specific block, pattern, or emotional weight you want to address — or you want to experience this work before committing to a longer journey — this is where we start.</p>
-            <p data-i18n="single.p2" style="font-family:var(--font-body); font-size:16px; line-height:1.65; color:var(--c-graphite); margin:0;">In a single intensive session, I take you directly to the source of one core pattern. You won't just gain insight. You'll feel something actually change.</p>
-            <dl style="padding:24px 0 0; border-top:1px solid rgba(28,31,30,0.10); display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:0; margin-top:8px;">
-              <div>
-                <dt data-i18n="label.invest" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-sage-gray); margin-bottom:6px;">Investment</dt>
-                <dd style="margin:0; font-family:var(--font-display); font-weight:700; font-size:26px; letter-spacing:-0.005em; color:var(--c-charcoal);">€200<span data-i18n="unit.session" style="font-family:var(--font-body); font-weight:400; font-size:14px; color:var(--c-graphite); margin-left:6px;">/ session</span></dd>
-              </div>
-              <div>
-                <dt data-i18n="label.format" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-sage-gray); margin-bottom:6px;">Format</dt>
-                <dd data-i18n="single.format" style="margin:0; font-family:var(--font-body); font-size:15px; color:var(--c-charcoal); line-height:1.4;">1:1, online<br />or in‑person</dd>
-              </div>
-            </dl>
-            <a class="cta-outline" data-i18n="single.cta" href="https://calendly.com/alanbacior/1-1-mentoring-free-call?month=2026-05" target="_blank" rel="noopener noreferrer">Book your session →</a>
-          </article>
-
-          <!-- 3-month program (featured) -->
-          <article style="background:var(--c-charcoal); color:var(--c-ivory); border:1px solid var(--c-charcoal); border-radius:14px; padding:40px 36px; display:flex; flex-direction:column; gap:22px; position:relative; box-shadow:var(--shadow-3);">
-            <div data-i18n="prog.badge" style="position:absolute; top:-1px; right:28px; background:var(--c-mist-green); color:var(--c-ivory); font-family:var(--font-sub); font-size:10px; letter-spacing:0.28em; text-transform:uppercase; padding:8px 14px; border-radius:0 0 8px 8px;">The full work</div>
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:16px;">
-              <span data-i18n="prog.label" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(246,244,240,0.6);">3‑Month 1:1 Program</span>
-            </div>
-            <h3 data-i18n="prog.h3" style="font-family:var(--font-display); font-weight:700; font-size:36px; line-height:1.1; letter-spacing:-0.008em; color:var(--c-ivory); margin:0; text-wrap:balance;">The full work.<br /><span style="color:var(--c-mist-green);">Lasting change.</span></h3>
-            <p data-i18n="prog.p" style="font-family:var(--font-body); font-size:16px; line-height:1.65; color:rgba(246,244,240,0.82); margin:0;">For those ready to go all the way — to dismantle the root patterns that have been shaping their relationships, their business, and their sense of self. Over three months, we work systematically. Session by session, we find the source, do the deep work, and rebuild from a place of real clarity and self‑trust.</p>
-            <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;">
-              <li style="display:grid; grid-template-columns:22px 1fr; gap:12px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:rgba(246,244,240,0.92);"><span style="color:var(--c-mist-green); font-weight:700;">→</span><span data-i18n="prog.li1">Regular 1:1 sessions over 3 months</span></li>
-              <li style="display:grid; grid-template-columns:22px 1fr; gap:12px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:rgba(246,244,240,0.92);"><span style="color:var(--c-mist-green); font-weight:700;">→</span><span data-i18n="prog.li2">Direct subconscious work — hypnosis &amp; kinesiology</span></li>
-              <li style="display:grid; grid-template-columns:22px 1fr; gap:12px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:rgba(246,244,240,0.92);"><span style="color:var(--c-mist-green); font-weight:700;">→</span><span data-i18n="prog.li3">Full support between sessions</span></li>
-              <li style="display:grid; grid-template-columns:22px 1fr; gap:12px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:rgba(246,244,240,0.92);"><span style="color:var(--c-mist-green); font-weight:700;">→</span><span data-i18n="prog.li4">A clear, personalized path from where you are to where you want to be</span></li>
-            </ul>
-            <div style="padding:20px; background:rgba(246,244,240,0.04); border:1px solid rgba(246,244,240,0.10); border-radius:12px; margin-top:4px;">
-              <div data-i18n="prog.result.title" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(246,244,240,0.55); margin-bottom:8px;">The result</div>
-              <p data-i18n="prog.result.body" style="margin:0; font-family:var(--font-body); font-size:15.5px; line-height:1.6; color:var(--c-ivory);">You don't just feel better. You become someone who trusts themselves, knows what they want, and is no longer held back by their past.</p>
-            </div>
-            <dl style="padding:24px 0 0; border-top:1px solid rgba(246,244,240,0.14); display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:0; margin-top:8px;">
-              <div>
-                <dt data-i18n="label.invest" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(246,244,240,0.55); margin-bottom:6px;">Investment</dt>
-                <dd style="margin:0; font-family:var(--font-display); font-weight:700; font-size:30px; letter-spacing:-0.005em; color:var(--c-ivory);">€3,000<span data-i18n="unit.3mo" style="font-family:var(--font-body); font-weight:400; font-size:14px; color:rgba(246,244,240,0.6); margin-left:6px;">/ 3 months</span></dd>
-              </div>
-              <div>
-                <dt data-i18n="label.format" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(246,244,240,0.55); margin-bottom:6px;">Format</dt>
-                <dd data-i18n="prog.format" style="margin:0; font-family:var(--font-body); font-size:15px; color:var(--c-ivory); line-height:1.4;">1:1, fully<br />personalized</dd>
-              </div>
-            </dl>
-            <a class="cta-filled" data-i18n="prog.cta" href="https://calendly.com/alanbacior/1-1-mentoring-free-call?month=2026-05" target="_blank" rel="noopener noreferrer">Apply for the program →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ TESTIMONIALS ============================ -->
-    <section id="testimonials" style="background:var(--c-sand); padding:clamp(72px,11vw,144px) clamp(20px,4vw,72px);">
-      <div style="max-width:1280px; margin:0 auto;">
-        <div style="display:flex; flex-direction:column; gap:24px; margin-bottom:clamp(48px,7vw,88px); max-width:760px;">
-          <span class="eyebrow-line" data-i18n="t.eyebrow">Real results. Real people.</span>
-          <h2 data-i18n="t.h2" style="font-family:var(--font-display); font-weight:700; font-size:clamp(34px,4.8vw,64px); line-height:1.06; letter-spacing:-0.008em; margin:0; color:var(--c-charcoal); text-wrap:balance;">
-            What changes<br />
-            <span style="color:var(--c-graphite);">when the root changes.</span>
-          </h2>
-        </div>
-
-        <div class="cols-3" style="margin-bottom:clamp(56px,8vw,88px);">
-          <article>
-            <a href="https://www.youtube.com/watch?v=Xy2tANoa4uA" target="_blank" rel="noopener noreferrer" style="position:relative; aspect-ratio:4 / 5; border-radius:14px; overflow:hidden; background:linear-gradient(160deg,#8E9890 0%,#4E5853 100%); box-shadow:var(--shadow-2); display:block; text-decoration:none; border:0;">
-              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=900&h=1100&fit=crop&crop=faces&auto=format&q=75" alt="Jennifer — video testimonial" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 25%;" />
-              <div style="position:absolute; inset:0; background:radial-gradient(circle at 30% 35%, rgba(246,244,240,0.18), transparent 60%);"></div>
-              <span style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; border-radius:999px; background:rgba(246,244,240,0.92); color:var(--c-charcoal); display:flex; align-items:center; justify-content:center; padding-left:4px; box-shadow:var(--shadow-2);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5L8 5.5z" fill="currentColor"/></svg></span>
-              <div data-i18n="t.watch" style="position:absolute; top:18px; right:18px; background:rgba(28,31,30,0.55); backdrop-filter:blur(10px); color:var(--c-ivory); padding:5px 10px; border-radius:999px; font-family:var(--font-sub); font-size:10px; letter-spacing:0.22em; text-transform:uppercase;">Watch</div>
-              <div style="position:absolute; inset:auto 0 0 0; height:40%; background:linear-gradient(180deg, rgba(28,31,30,0) 0%, rgba(28,31,30,0.55) 100%); pointer-events:none;"></div>
-              <div style="position:absolute; left:18px; bottom:16px; color:var(--c-ivory); display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--font-display); font-weight:700; font-size:18px; letter-spacing:-0.005em;">Jennifer</span><span data-i18n="t.role" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; opacity:0.78;">Client story</span></div>
-            </a>
-          </article>
-          <article>
-            <a href="https://www.youtube.com/watch?v=CF3XPPq_bpc" target="_blank" rel="noopener noreferrer" style="position:relative; aspect-ratio:4 / 5; border-radius:14px; overflow:hidden; background:linear-gradient(160deg,#A6ADA2 0%,#393E3B 100%); box-shadow:var(--shadow-2); display:block; text-decoration:none; border:0;">
-              <img src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?w=900&h=1100&fit=crop&crop=faces&auto=format&q=75" alt="Michaela — video testimonial" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 25%;" />
-              <div style="position:absolute; inset:0; background:radial-gradient(circle at 30% 35%, rgba(246,244,240,0.18), transparent 60%);"></div>
-              <span style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; border-radius:999px; background:rgba(246,244,240,0.92); color:var(--c-charcoal); display:flex; align-items:center; justify-content:center; padding-left:4px; box-shadow:var(--shadow-2);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5L8 5.5z" fill="currentColor"/></svg></span>
-              <div data-i18n="t.watch" style="position:absolute; top:18px; right:18px; background:rgba(28,31,30,0.55); backdrop-filter:blur(10px); color:var(--c-ivory); padding:5px 10px; border-radius:999px; font-family:var(--font-sub); font-size:10px; letter-spacing:0.22em; text-transform:uppercase;">Watch</div>
-              <div style="position:absolute; inset:auto 0 0 0; height:40%; background:linear-gradient(180deg, rgba(28,31,30,0) 0%, rgba(28,31,30,0.55) 100%); pointer-events:none;"></div>
-              <div style="position:absolute; left:18px; bottom:16px; color:var(--c-ivory); display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--font-display); font-weight:700; font-size:18px; letter-spacing:-0.005em;">Michaela</span><span data-i18n="t.role" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; opacity:0.78;">Client story</span></div>
-            </a>
-          </article>
-          <article>
-            <a href="https://www.youtube.com/watch?v=TRwkLgVtjoc" target="_blank" rel="noopener noreferrer" style="position:relative; aspect-ratio:4 / 5; border-radius:14px; overflow:hidden; background:linear-gradient(160deg,#6F7F74 0%,#1C1F1E 100%); box-shadow:var(--shadow-2); display:block; text-decoration:none; border:0;">
-              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=900&h=1100&fit=crop&crop=faces&auto=format&q=75" alt="Susi — video testimonial" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 25%;" />
-              <div style="position:absolute; inset:0; background:radial-gradient(circle at 30% 35%, rgba(246,244,240,0.18), transparent 60%);"></div>
-              <span style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; border-radius:999px; background:rgba(246,244,240,0.92); color:var(--c-charcoal); display:flex; align-items:center; justify-content:center; padding-left:4px; box-shadow:var(--shadow-2);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5L8 5.5z" fill="currentColor"/></svg></span>
-              <div data-i18n="t.watch" style="position:absolute; top:18px; right:18px; background:rgba(28,31,30,0.55); backdrop-filter:blur(10px); color:var(--c-ivory); padding:5px 10px; border-radius:999px; font-family:var(--font-sub); font-size:10px; letter-spacing:0.22em; text-transform:uppercase;">Watch</div>
-              <div style="position:absolute; inset:auto 0 0 0; height:40%; background:linear-gradient(180deg, rgba(28,31,30,0) 0%, rgba(28,31,30,0.55) 100%); pointer-events:none;"></div>
-              <div style="position:absolute; left:18px; bottom:16px; color:var(--c-ivory); display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--font-display); font-weight:700; font-size:18px; letter-spacing:-0.005em;">Susi</span><span data-i18n="t.role" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; opacity:0.78;">Client story</span></div>
-            </a>
-          </article>
-        </div>
-
-        <div class="cols-3">
-          <figure style="margin:0; background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px; padding:32px 30px; display:flex; flex-direction:column; gap:18px;">
-            <div aria-hidden="true" style="font-family:var(--font-display); font-weight:700; font-size:48px; line-height:1; color:var(--c-mist-green); height:16px; margin-top:-8px;">"</div>
-            <blockquote data-i18n="t.q1" style="margin:0; font-family:var(--font-display); font-weight:500; font-size:18px; line-height:1.4; letter-spacing:-0.003em; color:var(--c-charcoal);">For the first time, I didn't just understand what was happening — I felt it change. In one session.</blockquote>
-            <figcaption style="margin-top:auto; font-family:var(--font-sub); font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-sage-gray);">— Jennifer</figcaption>
-          </figure>
-          <figure style="margin:0; background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px; padding:32px 30px; display:flex; flex-direction:column; gap:18px;">
-            <div aria-hidden="true" style="font-family:var(--font-display); font-weight:700; font-size:48px; line-height:1; color:var(--c-mist-green); height:16px; margin-top:-8px;">"</div>
-            <blockquote data-i18n="t.q2" style="margin:0; font-family:var(--font-display); font-weight:500; font-size:18px; line-height:1.4; letter-spacing:-0.003em; color:var(--c-charcoal);">I'd done years of therapy. One session with Alan went further than all of it.</blockquote>
-            <figcaption style="margin-top:auto; font-family:var(--font-sub); font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-sage-gray);">— Michaela</figcaption>
-          </figure>
-          <figure style="margin:0; background:var(--c-ivory); border:1px solid rgba(28,31,30,0.08); border-radius:14px; padding:32px 30px; display:flex; flex-direction:column; gap:18px;">
-            <div aria-hidden="true" style="font-family:var(--font-display); font-weight:700; font-size:48px; line-height:1; color:var(--c-mist-green); height:16px; margin-top:-8px;">"</div>
-            <blockquote data-i18n="t.q3" style="margin:0; font-family:var(--font-display); font-weight:500; font-size:18px; line-height:1.4; letter-spacing:-0.003em; color:var(--c-charcoal);">I came in stuck. I left feeling like myself again — and I hadn't felt that way in years.</blockquote>
-            <figcaption style="margin-top:auto; font-family:var(--font-sub); font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:var(--c-sage-gray);">— Susi</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ ABOUT (graphite) ============================ -->
-    <section id="about" style="background:var(--c-graphite); color:var(--c-ivory); padding:clamp(72px,11vw,144px) clamp(20px,4vw,72px);">
-      <div style="max-width:1280px; margin:0 auto;">
-        <div class="about-grid">
-          <div style="border-radius:14px; overflow:hidden; aspect-ratio:4 / 5; background:linear-gradient(180deg,#4E5853,#1C1F1E); box-shadow:var(--shadow-3);">
-            <img src="assets/alan-gray.jpg" alt="Alan Bacior" style="width:100%; height:100%; object-fit:cover; object-position:78% 40%; filter:saturate(0.88);" />
-          </div>
-          <div style="display:flex; flex-direction:column; gap:26px;">
-            <span class="eyebrow-line dark" data-i18n="about.eyebrow">About me</span>
-            <h2 data-i18n="about.h2" style="font-family:var(--font-display); font-weight:700; font-size:clamp(32px,4.4vw,56px); line-height:1.08; letter-spacing:-0.008em; margin:0; color:var(--c-ivory); text-wrap:balance;">
-              I didn't learn this<br />from a book.<br />
-              <span style="color:var(--c-mist-green);">I lived it first.</span>
-            </h2>
-            <p data-i18n="about.p1" style="font-family:var(--font-body); font-size:16.5px; line-height:1.7; color:rgba(246,244,240,0.82); margin:0; max-width:58ch;">I know what it feels like to be completely lost. Depression. Panic attacks. A life that felt directionless — no matter what I tried. I ended up in the hospital more than once. I knew something had to change.</p>
-            <p data-i18n="about.p2" style="font-family:var(--font-body); font-size:16.5px; line-height:1.7; color:rgba(246,244,240,0.82); margin:0; max-width:58ch;">I tried traditional therapy. It helped me talk about what was happening. It didn't resolve it.</p>
-            <p data-i18n="about.p3" style="font-family:var(--font-body); font-size:16.5px; line-height:1.7; color:rgba(246,244,240,0.82); margin:0; max-width:58ch;">Everything changed when I discovered deep subconscious work. In one session, I was able to process something I'd been carrying since childhood — not intellectually, but emotionally. My relationship with my parents shifted immediately. The blame disappeared. The weight I didn't even know I was carrying — gone.</p>
-            <p data-i18n="about.p4" style="font-family:var(--font-body); font-size:16.5px; line-height:1.7; color:rgba(246,244,240,0.82); margin:0; max-width:58ch;">That's when I understood the difference between talking about your past and actually changing your relationship to it.</p>
-            <p data-i18n="about.closing" style="font-family:var(--font-display); font-weight:500; font-size:20px; line-height:1.5; color:var(--c-ivory); margin:0; padding-top:16px; border-top:1px solid rgba(246,244,240,0.18); max-width:52ch; letter-spacing:-0.003em;">That's the work I do now. It changed my life completely — which is why I know it can change yours.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ BOOKING ============================ -->
-    <section id="book" style="background:var(--c-charcoal); color:var(--c-ivory); padding:clamp(72px,11vw,144px) clamp(20px,4vw,72px); position:relative; overflow:hidden;">
-      <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(ellipse at 80% 20%, rgba(111,127,116,0.25), transparent 55%), radial-gradient(ellipse at 15% 85%, rgba(166,173,162,0.10), transparent 60%); pointer-events:none;"></div>
-      <div style="max-width:980px; margin:0 auto; position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; gap:32px;">
-        <span class="eyebrow-line dark" data-i18n="book.eyebrow">Ready to start</span>
-        <h2 data-i18n="book.h2" style="font-family:var(--font-display); font-weight:700; font-size:clamp(38px,5.8vw,80px); line-height:1.04; letter-spacing:-0.012em; margin:0; color:var(--c-ivory); text-wrap:balance;">
-          The shift you've been looking for<br />
-          <span style="color:var(--c-mist-green);">starts with one conversation.</span>
-        </h2>
-        <p data-i18n="book.body" style="font-family:var(--font-body); font-size:18px; line-height:1.6; color:rgba(246,244,240,0.82); margin:0; max-width:56ch;">Book a free call. We'll talk about where you are, what you've already tried, and whether this work is the right fit for you — a single session or the full program. No pressure. No pitch. Just an honest conversation.</p>
-        <div style="display:flex; flex-direction:column; gap:14px; align-items:center; margin-top:8px;">
-          <a class="cta-primary" href="https://calendly.com/alanbacior/1-1-mentoring-free-call?month=2026-05" target="_blank" rel="noopener noreferrer"><span data-i18n="book.cta">Book your free call</span> <span class="arrow">→</span></a>
-          <span data-i18n="book.note" style="font-family:var(--font-sub); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(246,244,240,0.55);">Free · 30 minutes · No commitment</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ FOOTER ============================ -->
-    <footer style="background:var(--c-charcoal); color:rgba(246,244,240,0.6); padding:48px clamp(20px,4vw,72px); border-top:1px solid rgba(246,244,240,0.10);">
-      <div style="max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
-        <div style="display:flex; align-items:center; gap:14px;">
-          <span style="font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:0.32em; color:var(--c-ivory); text-transform:uppercase;">Alan Bacior</span>
-          <span data-i18n="footer.role" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.28em; color:rgba(246,244,240,0.45); text-transform:uppercase;">Subconscious Transformation Coach</span>
-        </div>
-        <span data-i18n="footer.copy" style="font-family:var(--font-sub); font-size:10px; letter-spacing:0.28em; color:rgba(246,244,240,0.4); text-transform:uppercase;">© 2026 · Alignment that transforms.</span>
-      </div>
-    </footer>
-
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#top" aria-label="Alan Bacior, zum Seitenanfang">
+      <img src="assets/img/logo-ab.png" alt="" width="38" height="30">
+      <span>Alan Bacior</span>
+    </a>
+    <nav class="site-nav" aria-label="Seitennavigation">
+      <ul>
+        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#ueber-mich">Über mich</a></li>
+        <li><a href="#preise">Preise</a></li>
+        <li><a href="#fragen">Fragen</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--small btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Gespräch buchen</a>
   </div>
+</header>
 
-  <script>
-    const I18N = {
-      en: {
-        "meta.title": "Alan Bacior — Subconscious Transformation Coach",
-        "nav.problem": "The problem", "nav.method": "The method", "nav.work": "Work with me", "nav.about": "About",
-        "header.book": "Book a call",
-        "hero.h1": "You already know what needs to change.<br><span style=\"color:var(--c-mist-green);\">Something inside keeps stopping you.</span>",
-        "hero.body": "You've read the books. Done the therapy. Listened to every podcast. And still — the same patterns. The same blocks. The same feeling of being stuck.<br><br>I work with people who are done with surface‑level answers. Together, we go to the root of what's actually holding you back — and we change it there.",
-        "hero.cta1": "Book a free call", "hero.cta2": "See how I work",
-        "trust.1.l": "Hypnosis", "trust.1.s": "Direct subconscious access",
-        "trust.2.l": "Kinesiology", "trust.2.s": "Body as guide",
-        "trust.3.l": "1:1 only", "trust.3.s": "No groups, no replays",
-        "trust.4.l": "Online · worldwide", "trust.4.s": "Wherever you are",
-        "problem.eyebrow": "Why nothing has worked",
-        "problem.h2": "The gap isn't knowledge.<br><span style=\"color:var(--c-graphite);\">It's what lives beneath it.</span>",
-        "problem.p1": "Most people who come to work with me have already done a lot. Coaching, therapy, self‑development — they understand what they should do. But understanding something and actually doing it are two completely different things.",
-        "problem.p2": "The block isn't in your mind. It's in your subconscious — in moments from your past that shaped how you see yourself, what you believe you deserve, and what feels safe to do.",
-        "problem.p3": "Talking about those moments helps. But it doesn't resolve them.",
-        "problem.c1.t": "\"I know what to do — I just can't make myself do it.\"", "problem.c1.b": "You're not lazy or broken. There's a root cause. And we can find it.",
-        "problem.c2.t": "\"I've tried everything and nothing really changes.\"", "problem.c2.b": "Surface‑level work creates surface‑level results. The shift has to happen deeper.",
-        "problem.c3.t": "\"I feel stuck — personally, professionally, in my relationships.\"", "problem.c3.b": "When the internal pattern doesn't change, the external situation doesn't either. Until it does.",
-        "method.eyebrow": "How I work",
-        "method.h2": "Not just talking<br>about the past.<br><span style=\"color:var(--c-mist-green);\">Actually changing it.</span>",
-        "method.p1": "I work directly with your subconscious — using tools like hypnosis and kinesiology — to reach the exact moment where a pattern started. Not to analyze it. To reprocess it at the root.",
-        "method.p2": "In our sessions, you don't just understand what happened. You feel the shift happen. The emotional charge releases. The pattern loses its grip. And from that point forward, the action that felt impossible becomes natural.",
-        "method.step": "Step", "method.s1": "Understand.", "method.s2": "Release.", "method.s3": "Realign.", "method.s4": "Transform.",
-        "method.d1.t": "To the source, not the surface", "method.d1.b": "I don't help you manage symptoms. I help you find and eliminate the root cause — so the change is real and it stays.",
-        "method.d2.t": "The shift happens in the session", "method.d2.b": "Not weeks of homework. Not gradual progress over months. You feel something change — in the room, in real time.",
-        "method.d3.t": "Clarity that finally makes sense", "method.d3.b": "I'll explain what's happening in a way you've never heard before. That moment of \"this is why I've been like this\" — it's part of the transformation.",
-        "who.eyebrow": "Is this for you?",
-        "who.h2": "For those who've done the work<br><span style=\"color:var(--c-graphite);\">and are ready for what's underneath.</span>",
-        "who.p1": "The people I work with have usually already invested in their growth — therapy, coaching, courses. They understand a lot. But the same patterns keep showing up, and they can't figure out why.",
-        "who.p2": "They're not looking for more advice. They're not looking for motivation. They're looking for a real shift — and they're ready to do what it takes to get there.",
-        "who.yes.title": "You're in the right place if",
-        "who.yes.1": "You've tried therapy, coaching, or self‑development — but the same patterns keep coming back.",
-        "who.yes.2": "You feel stuck in a relationship, your business, or your sense of self — and you can't pinpoint why.",
-        "who.yes.3": "You know something has to change, and you're done waiting for it to happen on its own.",
-        "who.yes.4": "You're willing to go deep — and ready to take full responsibility for your life.",
-        "who.no.title": "This is not for you if",
-        "who.no.body": "You're looking for quick motivation, someone to tell you what to do, or you're not ready to invest fully — emotionally and financially — in real transformation.",
-        "offers.eyebrow": "Work with me",
-        "offers.h2": "Two ways in.<br><span style=\"color:var(--c-graphite);\">Both go to the root.</span>",
-        "offers.intro": "Not sure which one fits? Start with a free 30‑minute discovery call — we'll figure out together whether you need a single session or the full program.",
-        "single.label": "Single deep‑dive session", "single.badge": "Start here",
-        "single.h3": "One session. One root.<br>One real shift.",
-        "single.p1": "If you have a specific block, pattern, or emotional weight you want to address — or you want to experience this work before committing to a longer journey — this is where we start.",
-        "single.p2": "In a single intensive session, I take you directly to the source of one core pattern. You won't just gain insight. You'll feel something actually change.",
-        "single.format": "1:1, online<br>or in‑person", "single.cta": "Book your session →",
-        "label.invest": "Investment", "label.format": "Format", "unit.session": "/ session", "unit.3mo": "/ 3 months",
-        "prog.badge": "The full work", "prog.label": "3‑Month 1:1 Program",
-        "prog.h3": "The full work.<br><span style=\"color:var(--c-mist-green);\">Lasting change.</span>",
-        "prog.p": "For those ready to go all the way — to dismantle the root patterns that have been shaping their relationships, their business, and their sense of self. Over three months, we work systematically. Session by session, we find the source, do the deep work, and rebuild from a place of real clarity and self‑trust.",
-        "prog.li1": "Regular 1:1 sessions over 3 months", "prog.li2": "Direct subconscious work — hypnosis & kinesiology", "prog.li3": "Full support between sessions", "prog.li4": "A clear, personalized path from where you are to where you want to be",
-        "prog.result.title": "The result", "prog.result.body": "You don't just feel better. You become someone who trusts themselves, knows what they want, and is no longer held back by their past.",
-        "prog.format": "1:1, fully<br>personalized", "prog.cta": "Apply for the program →",
-        "t.eyebrow": "Real results. Real people.",
-        "t.h2": "What changes<br><span style=\"color:var(--c-graphite);\">when the root changes.</span>",
-        "t.role": "Client story", "t.watch": "Watch",
-        "t.q1": "For the first time, I didn't just understand what was happening — I felt it change. In one session.",
-        "t.q2": "I'd done years of therapy. One session with Alan went further than all of it.",
-        "t.q3": "I came in stuck. I left feeling like myself again — and I hadn't felt that way in years.",
-        "about.eyebrow": "About me",
-        "about.h2": "I didn't learn this<br>from a book.<br><span style=\"color:var(--c-mist-green);\">I lived it first.</span>",
-        "about.p1": "I know what it feels like to be completely lost. Depression. Panic attacks. A life that felt directionless — no matter what I tried. I ended up in the hospital more than once. I knew something had to change.",
-        "about.p2": "I tried traditional therapy. It helped me talk about what was happening. It didn't resolve it.",
-        "about.p3": "Everything changed when I discovered deep subconscious work. In one session, I was able to process something I'd been carrying since childhood — not intellectually, but emotionally. My relationship with my parents shifted immediately. The blame disappeared. The weight I didn't even know I was carrying — gone.",
-        "about.p4": "That's when I understood the difference between talking about your past and actually changing your relationship to it.",
-        "about.closing": "That's the work I do now. It changed my life completely — which is why I know it can change yours.",
-        "book.eyebrow": "Ready to start",
-        "book.h2": "The shift you've been looking for<br><span style=\"color:var(--c-mist-green);\">starts with one conversation.</span>",
-        "book.body": "Book a free call. We'll talk about where you are, what you've already tried, and whether this work is the right fit for you — a single session or the full program. No pressure. No pitch. Just an honest conversation.",
-        "book.cta": "Book your free call", "book.note": "Free · 30 minutes · No commitment",
-        "footer.role": "Subconscious Transformation Coach", "footer.copy": "© 2026 · Alignment that transforms."
-      },
-      de: {
-        "meta.title": "Alan Bacior — Coach für unterbewusste Transformation",
-        "nav.problem": "Das Problem", "nav.method": "Die Methode", "nav.work": "Mit mir arbeiten", "nav.about": "Über mich",
-        "header.book": "Termin buchen",
-        "hero.h1": "Du weißt bereits, was sich ändern muss.<br><span style=\"color:var(--c-mist-green);\">Etwas in dir hält dich zurück.</span>",
-        "hero.body": "Du hast die Bücher gelesen. Die Therapie gemacht. Jeden Podcast gehört. Und trotzdem — dieselben Muster. Dieselben Blockaden. Dasselbe Gefühl, festzustecken.<br><br>Ich arbeite mit Menschen, die genug von oberflächlichen Antworten haben. Gemeinsam gehen wir zur Wurzel dessen, was dich wirklich zurückhält — und verändern es dort.",
-        "hero.cta1": "Kostenloses Gespräch buchen", "hero.cta2": "So arbeite ich",
-        "trust.1.l": "Hypnose", "trust.1.s": "Direkter Zugang zum Unterbewusstsein",
-        "trust.2.l": "Kinesiologie", "trust.2.s": "Der Körper als Wegweiser",
-        "trust.3.l": "Nur 1:1", "trust.3.s": "Keine Gruppen, keine Aufzeichnungen",
-        "trust.4.l": "Online · weltweit", "trust.4.s": "Wo immer du bist",
-        "problem.eyebrow": "Warum bisher nichts funktioniert hat",
-        "problem.h2": "Die Lücke ist nicht das Wissen.<br><span style=\"color:var(--c-graphite);\">Es ist das, was darunter liegt.</span>",
-        "problem.p1": "Die meisten Menschen, die zu mir kommen, haben schon viel getan. Coaching, Therapie, Persönlichkeitsentwicklung — sie verstehen, was sie tun sollten. Aber etwas zu verstehen und es tatsächlich zu tun, sind zwei völlig verschiedene Dinge.",
-        "problem.p2": "Die Blockade sitzt nicht im Kopf. Sie sitzt in deinem Unterbewusstsein — in Momenten aus deiner Vergangenheit, die geprägt haben, wie du dich siehst, was du glaubst zu verdienen und was sich sicher anfühlt.",
-        "problem.p3": "Über diese Momente zu sprechen, hilft. Aber es löst sie nicht auf.",
-        "problem.c1.t": "„Ich weiß, was zu tun ist — ich bringe mich nur nicht dazu.\"", "problem.c1.b": "Du bist nicht faul oder kaputt. Es gibt eine Ursache. Und wir können sie finden.",
-        "problem.c2.t": "„Ich habe alles versucht und nichts ändert sich wirklich.\"", "problem.c2.b": "Oberflächliche Arbeit schafft oberflächliche Ergebnisse. Die Veränderung muss tiefer geschehen.",
-        "problem.c3.t": "„Ich stecke fest — persönlich, beruflich, in meinen Beziehungen.\"", "problem.c3.b": "Solange sich das innere Muster nicht ändert, ändert sich auch die äußere Situation nicht. Bis sie es tut.",
-        "method.eyebrow": "Wie ich arbeite",
-        "method.h2": "Nicht nur über die<br>Vergangenheit reden.<br><span style=\"color:var(--c-mist-green);\">Sie wirklich verändern.</span>",
-        "method.p1": "Ich arbeite direkt mit deinem Unterbewusstsein — mit Werkzeugen wie Hypnose und Kinesiologie — um genau den Moment zu erreichen, in dem ein Muster entstanden ist. Nicht um es zu analysieren. Um es an der Wurzel neu zu verarbeiten.",
-        "method.p2": "In unseren Sitzungen verstehst du nicht nur, was geschehen ist. Du spürst, wie die Veränderung passiert. Die emotionale Ladung löst sich. Das Muster verliert seinen Griff. Und von da an wird das Handeln, das unmöglich schien, selbstverständlich.",
-        "method.step": "Schritt", "method.s1": "Verstehen.", "method.s2": "Loslassen.", "method.s3": "Ausrichten.", "method.s4": "Transformieren.",
-        "method.d1.t": "Zur Quelle, nicht an die Oberfläche", "method.d1.b": "Ich helfe dir nicht, Symptome zu verwalten. Ich helfe dir, die Ursache zu finden und aufzulösen — damit die Veränderung echt ist und bleibt.",
-        "method.d2.t": "Die Veränderung passiert in der Sitzung", "method.d2.b": "Keine wochenlangen Hausaufgaben. Kein langsamer Fortschritt über Monate. Du spürst, wie sich etwas verändert — im Raum, in Echtzeit.",
-        "method.d3.t": "Klarheit, die endlich Sinn ergibt", "method.d3.b": "Ich erkläre dir, was geschieht, auf eine Weise, die du noch nie gehört hast. Dieser Moment von „deshalb war ich so\" — er ist Teil der Transformation.",
-        "who.eyebrow": "Ist das etwas für dich?",
-        "who.h2": "Für alle, die die Arbeit getan haben<br><span style=\"color:var(--c-graphite);\">und bereit sind für das, was darunter liegt.</span>",
-        "who.p1": "Die Menschen, mit denen ich arbeite, haben meist schon in ihr Wachstum investiert — Therapie, Coaching, Kurse. Sie verstehen viel. Aber dieselben Muster tauchen immer wieder auf, und sie wissen nicht, warum.",
-        "who.p2": "Sie suchen keine weiteren Ratschläge. Sie suchen keine Motivation. Sie suchen eine echte Veränderung — und sind bereit zu tun, was nötig ist.",
-        "who.yes.title": "Du bist hier richtig, wenn",
-        "who.yes.1": "Du Therapie, Coaching oder Persönlichkeitsentwicklung versucht hast — aber dieselben Muster immer wieder zurückkehren.",
-        "who.yes.2": "Du dich festgefahren fühlst — in einer Beziehung, deinem Business oder dir selbst — und nicht sagen kannst, warum.",
-        "who.yes.3": "Du weißt, dass sich etwas ändern muss, und nicht länger warten willst, dass es von allein geschieht.",
-        "who.yes.4": "Du bereit bist, in die Tiefe zu gehen — und volle Verantwortung für dein Leben zu übernehmen.",
-        "who.no.title": "Das ist nichts für dich, wenn",
-        "who.no.body": "Du schnelle Motivation suchst, jemanden, der dir sagt, was zu tun ist, oder nicht bereit bist, voll zu investieren — emotional und finanziell — in echte Transformation.",
-        "offers.eyebrow": "Mit mir arbeiten",
-        "offers.h2": "Zwei Wege hinein.<br><span style=\"color:var(--c-graphite);\">Beide gehen zur Wurzel.</span>",
-        "offers.intro": "Nicht sicher, was passt? Beginne mit einem kostenlosen 30‑minütigen Kennenlerngespräch — gemeinsam finden wir heraus, ob du eine einzelne Sitzung oder das gesamte Programm brauchst.",
-        "single.label": "Einzelne Tiefen‑Sitzung", "single.badge": "Hier starten",
-        "single.h3": "Eine Sitzung. Eine Wurzel.<br>Eine echte Veränderung.",
-        "single.p1": "Wenn du eine bestimmte Blockade, ein Muster oder ein emotionales Gewicht angehen willst — oder diese Arbeit erleben möchtest, bevor du dich auf einen längeren Weg einlässt — hier fangen wir an.",
-        "single.p2": "In einer einzigen intensiven Sitzung führe ich dich direkt zur Quelle eines Kernmusters. Du gewinnst nicht nur Einsicht. Du spürst, wie sich wirklich etwas verändert.",
-        "single.format": "1:1, online<br>oder vor Ort", "single.cta": "Sitzung buchen →",
-        "label.invest": "Investition", "label.format": "Format", "unit.session": "/ Sitzung", "unit.3mo": "/ 3 Monate",
-        "prog.badge": "Die ganze Arbeit", "prog.label": "3‑Monats‑1:1‑Programm",
-        "prog.h3": "Die ganze Arbeit.<br><span style=\"color:var(--c-mist-green);\">Bleibende Veränderung.</span>",
-        "prog.p": "Für alle, die den ganzen Weg gehen wollen — um die Wurzelmuster aufzulösen, die ihre Beziehungen, ihr Business und ihr Selbstbild geprägt haben. Über drei Monate arbeiten wir systematisch. Sitzung für Sitzung finden wir die Quelle, machen die Tiefenarbeit und bauen aus echter Klarheit und Selbstvertrauen neu auf.",
-        "prog.li1": "Regelmäßige 1:1‑Sitzungen über 3 Monate", "prog.li2": "Direkte Arbeit mit dem Unterbewusstsein — Hypnose & Kinesiologie", "prog.li3": "Volle Begleitung zwischen den Sitzungen", "prog.li4": "Ein klarer, persönlicher Weg von dort, wo du bist, zu dort, wo du sein willst",
-        "prog.result.title": "Das Ergebnis", "prog.result.body": "Du fühlst dich nicht nur besser. Du wirst zu jemandem, der sich selbst vertraut, weiß, was er will, und nicht länger von seiner Vergangenheit zurückgehalten wird.",
-        "prog.format": "1:1, voll<br>individuell", "prog.cta": "Für das Programm bewerben →",
-        "t.eyebrow": "Echte Ergebnisse. Echte Menschen.",
-        "t.h2": "Was sich verändert,<br><span style=\"color:var(--c-graphite);\">wenn sich die Wurzel verändert.</span>",
-        "t.role": "Kundengeschichte", "t.watch": "Ansehen",
-        "t.q1": "Zum ersten Mal habe ich nicht nur verstanden, was passiert — ich habe gespürt, wie es sich verändert. In einer Sitzung.",
-        "t.q2": "Ich hatte Jahre der Therapie hinter mir. Eine Sitzung mit Alan ging weiter als all das.",
-        "t.q3": "Ich kam festgefahren. Ich ging wieder als ich selbst — und so hatte ich mich seit Jahren nicht gefühlt.",
-        "about.eyebrow": "Über mich",
-        "about.h2": "Ich habe das nicht<br>aus einem Buch gelernt.<br><span style=\"color:var(--c-mist-green);\">Ich habe es zuerst gelebt.</span>",
-        "about.p1": "Ich weiß, wie es sich anfühlt, völlig verloren zu sein. Depression. Panikattacken. Ein Leben ohne Richtung — egal, was ich versuchte. Ich landete mehr als einmal im Krankenhaus. Ich wusste, dass sich etwas ändern musste.",
-        "about.p2": "Ich versuchte klassische Therapie. Sie half mir, über das zu reden, was geschah. Sie löste es nicht.",
-        "about.p3": "Alles änderte sich, als ich die tiefe Arbeit mit dem Unterbewusstsein entdeckte. In einer Sitzung konnte ich etwas verarbeiten, das ich seit meiner Kindheit mit mir trug — nicht intellektuell, sondern emotional. Mein Verhältnis zu meinen Eltern veränderte sich sofort. Die Schuldzuweisungen verschwanden. Das Gewicht, von dem ich nicht einmal wusste, dass ich es trug — weg.",
-        "about.p4": "Da verstand ich den Unterschied zwischen über seine Vergangenheit zu reden und seine Beziehung zu ihr tatsächlich zu verändern.",
-        "about.closing": "Das ist die Arbeit, die ich heute mache. Sie hat mein Leben völlig verändert — deshalb weiß ich, dass sie auch deins verändern kann.",
-        "book.eyebrow": "Bereit anzufangen",
-        "book.h2": "Die Veränderung, die du suchst,<br><span style=\"color:var(--c-mist-green);\">beginnt mit einem Gespräch.</span>",
-        "book.body": "Buche ein kostenloses Gespräch. Wir sprechen darüber, wo du stehst, was du schon versucht hast und ob diese Arbeit zu dir passt — eine einzelne Sitzung oder das ganze Programm. Kein Druck. Kein Verkaufsgespräch. Nur ein ehrliches Gespräch.",
-        "book.cta": "Kostenloses Gespräch buchen", "book.note": "Kostenlos · 30 Minuten · Unverbindlich",
-        "footer.role": "Coach für unterbewusste Transformation", "footer.copy": "© 2026 · Ausrichtung, die transformiert."
-      }
-    };
+<main id="inhalt">
 
-    function applyLang(lang) {
-      const dict = I18N[lang] || I18N.en;
-      document.documentElement.lang = lang;
-      document.querySelectorAll("[data-i18n]").forEach(function (el) {
-        const key = el.getAttribute("data-i18n");
-        if (dict[key] != null) el.innerHTML = dict[key];
-      });
-      document.querySelectorAll(".lang-switch button").forEach(function (b) {
-        b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
-      });
-      try { localStorage.setItem("lang", lang); } catch (e) {}
-    }
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__light" aria-hidden="true"><svg class="palm" viewBox="0 0 800 1000" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M-60 800 C150 560 330 330 640 190" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M-6 738 Q-10 686 -21 681 Q-19 689 -6 738Z"/><path d="M-6 738 Q34 747 72 775 Q39 736 -6 738Z"/><path d="M51 672 Q46 605 29 599 Q33 609 51 672Z"/><path d="M51 672 Q120 691 187 734 Q132 665 51 672Z"/><path d="M74 646 Q67 570 50 562 Q55 573 74 646Z"/><path d="M74 646 Q155 665 232 714 Q167 637 74 646Z"/><path d="M110 605 Q104 513 86 503 Q90 517 110 605Z"/><path d="M110 605 Q198 628 282 687 Q211 601 110 605Z"/><path d="M138 575 Q124 484 96 478 Q106 491 138 575Z"/><path d="M138 575 Q226 605 314 664 Q243 571 138 575Z"/><path d="M168 542 Q164 428 141 415 Q143 432 168 542Z"/><path d="M168 542 Q252 566 332 626 Q264 543 168 542Z"/><path d="M196 513 Q181 408 151 400 Q162 415 196 513Z"/><path d="M196 513 Q291 546 385 616 Q309 515 196 513Z"/><path d="M228 481 Q217 378 194 368 Q201 383 228 481Z"/><path d="M228 481 Q321 526 418 603 Q344 490 228 481Z"/><path d="M249 461 Q252 352 236 339 Q232 354 249 461Z"/><path d="M249 461 Q333 487 416 543 Q348 456 249 461Z"/><path d="M277 435 Q267 336 244 326 Q251 340 277 435Z"/><path d="M277 435 Q365 479 457 554 Q387 445 277 435Z"/><path d="M320 396 Q324 301 308 290 Q303 303 320 396Z"/><path d="M320 396 Q399 425 476 485 Q412 401 320 396Z"/><path d="M341 378 Q345 283 335 270 Q330 284 341 378Z"/><path d="M341 378 Q417 418 498 483 Q438 387 341 378Z"/><path d="M382 346 Q383 258 371 247 Q369 259 382 346Z"/><path d="M382 346 Q456 392 537 465 Q478 363 382 346Z"/><path d="M410 324 Q414 255 406 246 Q402 256 410 324Z"/><path d="M441 302 Q452 237 452 228 Q442 236 441 302Z"/><path d="M441 302 Q494 329 547 379 Q505 314 441 302Z"/><path d="M490 270 Q499 224 499 217 Q491 222 490 270Z"/><path d="M490 270 Q526 298 567 340 Q540 283 490 270Z"/><path d="M519 252 Q528 217 529 212 Q522 216 519 252Z"/><path d="M519 252 Q557 274 596 312 Q566 263 519 252Z"/><path d="M568 225 Q571 212 571 210 Q569 211 568 225Z"/><path d="M568 225 Q581 237 596 253 Q586 232 568 225Z"/><path d="M593 212 Q595 204 595 203 Q594 204 593 212Z"/><path d="M593 212 Q600 217 608 225 Q603 215 593 212Z"/><path d="M-80 430 C120 340 290 190 520 70" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M-8 394 Q1 346 -0 343 Q-8 345 -8 394Z"/><path d="M-8 394 Q29 419 68 465 Q39 408 -8 394Z"/><path d="M11 384 Q20 337 19 334 Q11 335 11 384Z"/><path d="M11 384 Q52 422 102 481 Q71 404 11 384Z"/><path d="M48 363 Q60 308 62 305 Q51 306 48 363Z"/><path d="M48 363 Q99 403 158 472 Q117 385 48 363Z"/><path d="M84 342 Q93 282 89 279 Q80 281 84 342Z"/><path d="M84 342 Q143 379 206 450 Q159 361 84 342Z"/><path d="M117 321 Q122 241 114 238 Q109 242 117 321Z"/><path d="M117 321 Q183 365 254 446 Q202 344 117 321Z"/><path d="M140 306 Q146 223 140 219 Q133 223 140 306Z"/><path d="M140 306 Q208 351 283 433 Q229 328 140 306Z"/><path d="M177 282 Q181 215 173 212 Q169 215 177 282Z"/><path d="M177 282 Q247 326 325 404 Q270 298 177 282Z"/><path d="M213 258 Q224 188 222 184 Q212 186 213 258Z"/><path d="M213 258 Q273 292 336 359 Q288 274 213 258Z"/><path d="M247 236 Q256 163 250 159 Q241 162 247 236Z"/><path d="M247 236 Q314 278 388 354 Q334 254 247 236Z"/><path d="M274 218 Q328 247 387 302 Q344 226 274 218Z"/><path d="M302 200 Q310 129 306 126 Q298 128 302 200Z"/><path d="M302 200 Q356 236 415 302 Q371 219 302 200Z"/><path d="M341 174 Q347 119 342 117 Q337 119 341 174Z"/><path d="M341 174 Q390 210 444 273 Q406 193 341 174Z"/><path d="M376 152 Q382 103 379 100 Q374 102 376 152Z"/><path d="M376 152 Q413 182 456 231 Q427 167 376 152Z"/><path d="M415 129 Q421 94 420 92 Q414 93 415 129Z"/><path d="M415 129 Q443 145 473 176 Q451 135 415 129Z"/><path d="M439 115 Q443 90 442 89 Q438 90 439 115Z"/><path d="M439 115 Q458 130 480 155 Q465 122 439 115Z"/><path d="M476 93 Q479 83 480 83 Q477 83 476 93Z"/><path d="M476 93 Q483 100 491 109 Q486 97 476 93Z"/><path d="M40 1020 C250 860 480 740 790 700" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M98 977 Q104 933 101 921 Q95 933 98 977Z"/><path d="M98 977 Q139 996 180 1024 Q147 982 98 977Z"/><path d="M135 951 Q185 979 235 1020 Q195 965 135 951Z"/><path d="M177 924 Q193 849 193 828 Q178 847 177 924Z"/><path d="M207 905 Q221 840 217 821 Q204 838 207 905Z"/><path d="M207 905 Q264 941 325 986 Q280 917 207 905Z"/><path d="M237 887 Q257 819 258 799 Q241 816 237 887Z"/><path d="M237 887 Q290 931 350 986 Q308 911 237 887Z"/><path d="M275 866 Q331 912 393 972 Q349 892 275 866Z"/><path d="M303 851 Q329 759 334 731 Q311 754 303 851Z"/><path d="M303 851 Q369 893 436 953 Q384 873 303 851Z"/><path d="M333 836 Q359 757 363 733 Q340 751 333 836Z"/><path d="M333 836 Q403 885 477 952 Q422 862 333 836Z"/><path d="M369 819 Q389 746 390 724 Q372 742 369 819Z"/><path d="M369 819 Q431 877 500 955 Q451 858 369 819Z"/><path d="M420 797 Q444 715 448 691 Q427 711 420 797Z"/><path d="M420 797 Q480 860 551 942 Q504 839 420 797Z"/><path d="M459 782 Q490 704 500 680 Q473 697 459 782Z"/><path d="M484 772 Q538 819 596 881 Q554 802 484 772Z"/><path d="M538 754 Q569 690 583 671 Q556 683 538 754Z"/><path d="M538 754 Q585 801 640 861 Q603 784 538 754Z"/><path d="M567 746 Q597 682 609 663 Q584 675 567 746Z"/><path d="M567 746 Q607 788 653 844 Q621 776 567 746Z"/><path d="M611 734 Q637 689 650 676 Q627 683 611 734Z"/><path d="M651 724 Q675 750 703 784 Q684 742 651 724Z"/><path d="M694 715 Q706 693 712 686 Q701 690 694 715Z"/><path d="M694 715 Q711 738 732 767 Q719 732 694 715Z"/><path d="M755 705 Q760 697 763 694 Q758 695 755 705Z"/><path d="M755 705 Q760 714 768 724 Q764 711 755 705Z"/></g></svg></div>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="kicker">1:1-Begleitung für Frauen</p>
+      <h1 id="hero-title" class="display hero__title">Wenn dir gerade alles zu viel ist.</h1>
+      <p class="hero__lead">Du hast schon viel versucht und kommst trotzdem nicht raus. Ich begleite dich 1:1 an die alten Muster, die dich festhalten, und bleibe an deiner Seite, bis du wieder bei dir ankommst.</p>
+      <div class="actions" id="hero-actions">
+        <a class="btn btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Kostenfreies Klarheits-Gespräch buchen</a>
+        <a class="btn btn--line" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20ich%20habe%20deine%20Seite%20gelesen%20und%20m%C3%B6chte%20dir%20kurz%20schreiben%2C%20worum%20es%20bei%20mir%20geht%3A%20" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2c-4.9 0-8.8 3.5-8.8 7.9 0 2 .8 3.8 2.2 5.2l-.9 3.9 4-1.9c1.1.4 2.3.6 3.5.6 4.9 0 8.8-3.5 8.8-7.8S16.9 3.2 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="8.4" cy="11.2" r="1.05" fill="currentColor"/><circle cx="12" cy="11.2" r="1.05" fill="currentColor"/><circle cx="15.6" cy="11.2" r="1.05" fill="currentColor"/></svg><span>Per WhatsApp schreiben</span></a>
+      </div>
+      <p class="hero__note">30 Minuten per Video, kostenfrei. Du bekommst eine ehrliche Einschätzung, auch wenn wir danach nicht zusammenarbeiten.</p>
+    </div>
+    <figure class="hero__photo">
+      <picture>
+  <source type="image/webp" srcset="assets/img/alan-hero-752.webp 752w, assets/img/alan-hero-520.webp 520w" sizes="(min-width: 960px) 40vw, 92vw">
+  <img src="assets/img/alan-hero-752.jpg" srcset="assets/img/alan-hero-752.jpg 752w, assets/img/alan-hero-520.jpg 520w" sizes="(min-width: 960px) 40vw, 92vw" alt="Alan Bacior in einem hellen Leinenhemd vor einer sonnigen Wand" width="752" height="941" fetchpriority="high">
+</picture>
+    </figure>
+  </div>
+  <div class="hero__band">
+    <div class="wrap hero__band-inner">
+      <picture><source type="image/webp" srcset="assets/img/avatar-jenny.webp"><img class="avatar avatar--quote" src="assets/img/avatar-jenny.jpg" alt="" width="80" height="80" loading="lazy"></picture>
+      <blockquote class="hero__quote">
+        <p>„Ich habe mich aufgehoben, ich habe mich sicher gefühlt.“</p>
+        <footer>Jenny, nach mehreren Monaten Begleitung</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
 
-    (function init() {
-      let lang;
-      try { lang = localStorage.getItem("lang"); } catch (e) {}
-      const params = new URLSearchParams(location.search);
-      if (params.get("lang")) lang = params.get("lang");
-      if (!lang) lang = (navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en";
-      if (lang !== "de") lang = "en";
-      applyLang(lang);
-      document.querySelectorAll(".lang-switch button").forEach(function (b) {
-        b.addEventListener("click", function () { applyLang(b.getAttribute("data-lang")); });
-      });
-    })();
-  </script>
+<section class="section recognize" aria-labelledby="recognize-title">
+  <div class="wrap recognize__grid">
+    <h2 id="recognize-title" class="display h2 recognize__title">Vielleicht kennst du das</h2>
+    <div class="recognize__scenes">
+      <p>Du funktionierst, im Job und für alle um dich herum. Abends merkst du, dass für dich selbst nichts mehr übrig ist.</p>
+      <p>Dein Kopf kommt nicht zur Ruhe. Du spielst Gespräche und Entscheidungen immer wieder durch, nachts und beim Autofahren, und kommst zu keinem Ende.</p>
+      <p>Du weißt ziemlich genau, was du ändern müsstest. Du schaffst es trotzdem nicht, und dafür bist du wütend auf dich.</p>
+      <p>Deine Ziele stehen seit Jahren an derselben Stelle. Irgendwann hast du aufgehört, mit anderen darüber zu reden.</p>
+      <p>Und in deiner Beziehung, oder nach einer Trennung, ist vieles schwerer, als es sein müsste.</p>
+    </div>
+  </div>
+</section>
+
+<section class="voices" aria-label="Sätze aus Erstgesprächen">
+  <div class="wrap">
+    <ul class="voices__list">
+      <li class="display">„Ich weiß nicht mehr weiter.“</li>
+      <li class="display">„Das ist alles zu viel für mich.“</li>
+    </ul>
+    <p class="voices__caption">Diese beiden Sätze höre ich in fast jedem ersten Gespräch. Wenn einer davon gerade deiner ist: Das hat eine Ursache, und mit der können wir arbeiten.</p>
+  </div>
+</section>
+
+<section class="section why" aria-labelledby="why-title">
+  <div class="wrap why__grid">
+    <h2 id="why-title" class="display h2 why__title">Warum du bisher nicht rausgekommen bist</h2>
+    <div class="prose prose--large">
+      <p>Das meiste, was du jeden Tag tust, entscheidest du nicht bewusst. Wie du reagierst, wenn dich jemand kritisiert. Ob du Nein sagen kannst, wenn es darauf ankommt. Das läuft automatisch ab, wie ein Programm im Hintergrund.</p>
+      <p>Diese Programme sind früh entstanden, meistens in der Kindheit. Damals hast du gelernt, was sicher ist und was du tun musst, damit man dich mag. Für das Kind von damals war das sinnvoll. Heute laufen die Programme weiter, obwohl dein Leben längst ein anderes ist.</p>
+      <p>Ein Buch oder ein guter Podcast erreicht deinen Verstand. Du verstehst danach besser, warum du so bist. Das Programm darunter läuft trotzdem weiter und holt dich in der nächsten schwierigen Situation wieder ein.</p>
+      <p>Dazu kommt: Wenn du seit Monaten unter Druck stehst, hat dein Körper keine Reserven mehr. Dann ist jede zusätzliche Aufgabe zu viel, auch eine, die dir guttun würde. Der Satz „Das ist alles zu viel für mich“ beschreibt dann ziemlich genau, was in dir passiert.</p>
+      <p class="why__pull">In meiner Arbeit gehen wir genau an diese Programme heran. Wir suchen, wo ein Muster angefangen hat, und verändern es dort.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section stories" id="stimmen" aria-labelledby="stories-title">
+  <div class="wrap">
+    <h2 id="stories-title" class="display h2">Wie es sich für andere angefühlt hat</h2>
+    <div class="stories__grid">
+      <figure class="video ">
+  <div class="video__frame" data-youtube="Xy2tANoa4uA" data-title="Jenny">
+    <button type="button" class="video__play" aria-label="Video von Jenny abspielen">
+      <picture>
+        <source type="image/webp" srcset="assets/img/video-jenny.webp">
+        <img src="assets/img/video-jenny.jpg" alt="" width="225" height="412" loading="lazy" decoding="async">
+      </picture>
+      <span class="video__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
+    </button>
+  </div>
+  <figcaption>
+    <span class="video__name">Jenny</span>
+    <span class="video__context">Mehrmonatige Begleitung</span>
+    <blockquote class="video__quote"><p>„Als wir das Rad des Lebens gemacht haben und dann nach dem Coaching noch mal, da war ich ziemlich erstaunt, was für einen Hops ich gemacht hab.“</p></blockquote>
+  </figcaption>
+</figure>
+      <figure class="video ">
+  <div class="video__frame" data-youtube="6TKc7YQZlsw" data-title="Elena">
+    <button type="button" class="video__play" aria-label="Video von Elena abspielen">
+      <picture>
+        <source type="image/webp" srcset="assets/img/video-elena.webp">
+        <img src="assets/img/video-elena.jpg" alt="" width="225" height="412" loading="lazy" decoding="async">
+      </picture>
+      <span class="video__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
+    </button>
+  </div>
+  <figcaption>
+    <span class="video__name">Elena</span>
+    <span class="video__context">Einzelsitzung</span>
+    <blockquote class="video__quote"><p>„Mich hat so überrascht und fasziniert, wie schnell, sanft und liebevoll du an meine Blockaden gekommen bist, die mir bis dahin überhaupt noch nicht bewusst waren.“</p></blockquote>
+  </figcaption>
+</figure>
+      <figure class="video ">
+  <div class="video__frame" data-youtube="O-VVq5M_AC4" data-title="Anna">
+    <button type="button" class="video__play" aria-label="Video von Anna abspielen">
+      <picture>
+        <source type="image/webp" srcset="assets/img/video-anna.webp">
+        <img src="assets/img/video-anna.jpg" alt="" width="225" height="412" loading="lazy" decoding="async">
+      </picture>
+      <span class="video__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
+    </button>
+  </div>
+  <figcaption>
+    <span class="video__name">Anna</span>
+    <span class="video__context">Einzelsitzung</span>
+    <blockquote class="video__quote"><p>„Vorher ging es mir nicht wirklich gut, und nach unserem Coaching war ich ein anderer Mensch.“</p></blockquote>
+  </figcaption>
+</figure>
+    </div>
+    <p class="fine">Die Videos laden erst von YouTube, wenn du auf Abspielen tippst.</p>
+    <div class="cta-row ">
+  <a class="btn btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Kostenfreies Klarheits-Gespräch buchen</a>
+  <p class="cta-row__side"><span>30 Minuten per Video, kostenfrei und unverbindlich.</span> <a class="textlink" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20ich%20habe%20deine%20Seite%20gelesen%20und%20m%C3%B6chte%20dir%20kurz%20schreiben%2C%20worum%20es%20bei%20mir%20geht%3A%20" target="_blank" rel="noopener">Oder erst mal per WhatsApp schreiben</a></p>
+</div>
+  </div>
+</section>
+
+<section class="section process" id="ablauf" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="process__head">
+      <h2 id="process-title" class="display h2">So läuft die Begleitung ab</h2>
+      <p>Wir sehen uns per Videocall, du sitzt dabei bei dir zu Hause. Vorbereiten musst du nur einen kurzen Fragebogen.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__no" aria-hidden="true">1</span>
+        <h3 class="step__title">Das Klarheits-Gespräch</h3>
+        <p class="step__meta">30 Minuten, kostenfrei</p>
+        <p class="step__text">Du erzählst, wo du gerade stehst. Ich höre zu und frage nach, bis ich dein Thema wirklich verstehe. Oft kann ich dir schon in diesem Gespräch erklären, warum du feststeckst.</p>
+        <p class="step__after"><strong>Danach:</strong> Du weißt, ob ich dir helfen kann. Entscheiden musst du dich nicht sofort.</p>
+      </li>
+      <li class="step">
+        <span class="step__no" aria-hidden="true">2</span>
+        <h3 class="step__title">Die erste Sitzung</h3>
+        <p class="step__meta">90 Minuten</p>
+        <p class="step__text">Wir klären, wo du hinwillst. An ein paar einfachen Modellen zeige ich dir, wie deine unbewussten Muster entstanden sind und wie sie heute wirken.</p>
+        <p class="step__after"><strong>Danach:</strong> Vieles an dir ergibt plötzlich Sinn. Und du hast einen klaren Plan für die nächsten Wochen.</p>
+      </li>
+      <li class="step">
+        <span class="step__no" aria-hidden="true">3</span>
+        <h3 class="step__title">Jede Woche eine Sitzung</h3>
+        <p class="step__meta">60 bis 90 Minuten</p>
+        <p class="step__text">Wir gehen an den Moment, in dem ein Muster angefangen hat, oft in der Kindheit, und verändern es dort. Manche Sitzungen fühlen sich sofort leicht an. Andere gehen tiefer und wirken in den Tagen danach weiter.</p>
+        <p class="step__after"><strong>Danach:</strong> Du merkst im Alltag, dass du anders reagierst als früher.</p>
+      </li>
+      <li class="step">
+        <span class="step__no" aria-hidden="true">4</span>
+        <h3 class="step__title">Zwischen den Sitzungen</h3>
+        <p class="step__meta">per WhatsApp</p>
+        <p class="step__text">Du bekommst kleine Aufgaben für die nächsten Tage, Meditationen zum Nachhören und dein Journal für den Abend. Wenn etwas hochkommt, schreibst du mir.</p>
+        <p class="step__after"><strong>Danach:</strong> Du bist mit dem, was hochkommt, nicht allein.</p>
+      </li>
+    </ol>
+    <div class="cta-row cta-row--on-sand">
+  <a class="btn btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Kostenfreies Klarheits-Gespräch buchen</a>
+  <p class="cta-row__side"><span>30 Minuten per Video, kostenfrei und unverbindlich.</span> <a class="textlink" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20ich%20habe%20deine%20Seite%20gelesen%20und%20m%C3%B6chte%20dir%20kurz%20schreiben%2C%20worum%20es%20bei%20mir%20geht%3A%20" target="_blank" rel="noopener">Oder erst mal per WhatsApp schreiben</a></p>
+</div>
+  </div>
+</section>
+
+<section class="section about" id="ueber-mich" aria-labelledby="about-title">
+  <div class="wrap about__grid">
+    <figure class="about__photo">
+      <picture>
+  <source type="image/webp" srcset="assets/img/alan-about-720.webp 720w, assets/img/alan-about-480.webp 480w" sizes="(min-width: 960px) 36vw, 92vw">
+  <img src="assets/img/alan-about-720.jpg" srcset="assets/img/alan-about-720.jpg 720w, assets/img/alan-about-480.jpg 480w" sizes="(min-width: 960px) 36vw, 92vw" alt="Alan Bacior sitzt in einem ruhigen Raum und schaut aus dem Fenster" width="720" height="900" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="about__text">
+      <h2 id="about-title" class="display h2">Ich war selbst an diesem Punkt</h2>
+      <div class="prose prose--large">
+        <p>Vor einigen Jahren bekam ich aus dem Nichts Panikattacken. Jedes Mal war ich sicher, dass ich sterbe, und mehr als einmal habe ich den Krankenwagen gerufen. Im Krankenhaus wurde ich ruhig, und die Ärzte fanden nichts. Nach dem dritten oder vierten Mal hieß es: Körperlich ist alles in Ordnung.</p>
+        <p>Ich habe zwei Therapien gemacht. Die erste hat mir ein wenig geholfen. Die zweite hat mehr bewegt, mich aber erst einmal tiefer in eine Depression geführt, weil so viel Altes hochkam. Ich konnte endlich über meine Vergangenheit sprechen. Losgelassen hat sie mich trotzdem nicht.</p>
+        <p>Zwei Jahre später bin ich auf Workshops zum ersten Mal mit Arbeit am Unterbewusstsein in Berührung gekommen. Dort bin ich an den Punkt gekommen, an dem alles angefangen hatte. Seitdem hatte ich keine Panikattacke mehr und keine Depression. Und ich hatte plötzlich wieder Lust, mir Ziele zu setzen und mein Leben selbst in die Hand zu nehmen.</p>
+        <p>Weil ich gesehen habe, wie gut diese Arbeit bei mir und bei vielen anderen wirkt, habe ich mich darin ausbilden lassen. Später habe ich auf großen Workshops Gruppen geleitet. Heute lebe ich auf Bali und begleite Frauen aus dem ganzen deutschsprachigen Raum online.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stat">
+      <p class="stat__number display" aria-hidden="true">200+</p>
+      <div class="stat__text">
+        <h3 class="stat__label"><span class="sr-only">200+ </span>Frauen habe ich bisher begleitet</h3>
+        <p>In Einzelsitzungen, in Begleitungen über mehrere Monate und auf Workshops. Etwa die Hälfte meiner Klientinnen kam über eine Empfehlung zu mir.</p>
+      </div>
+    </div>
+    <div class="women">
+      <h3 class="women__title display">Warum ich vor allem mit Frauen arbeite</h3>
+      <div class="women__text prose prose--large">
+        <p>Frauen vertrauen mir meistens sehr schnell. Ganz erklären kann ich das bis heute nicht. Oft ist schon im ersten Gespräch eine tiefe Verbindung da.</p>
+        <p>Viele Frauen, die zu mir kommen, tragen Verletzungen, die mit Männern zu tun haben, mit dem Vater oder mit einem früheren Partner. Wenn ihnen dann ein Mann gegenübersitzt, der ruhig bleibt, zuhört und nicht urteilt, ist das für viele eine ganz neue Erfahrung. Manchmal beginnt die Veränderung genau dort.</p>
+        <p>Gleichzeitig bin ich klar und strukturiert. Ich nehme alles auf, was in dir hochkommt, und behalte dabei im Blick, wo du hinwillst.</p>
+      </div>
+      <p class="women__close">Bei mir darfst du alles fühlen, und wir kommen trotzdem Schritt für Schritt voran.</p>
+    </div>
+    <div class="cta-row ">
+  <a class="btn btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Kostenfreies Klarheits-Gespräch buchen</a>
+  <p class="cta-row__side"><span>30 Minuten per Video, kostenfrei und unverbindlich.</span> <a class="textlink" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20ich%20habe%20deine%20Seite%20gelesen%20und%20m%C3%B6chte%20dir%20kurz%20schreiben%2C%20worum%20es%20bei%20mir%20geht%3A%20" target="_blank" rel="noopener">Oder erst mal per WhatsApp schreiben</a></p>
+</div>
+  </div>
+</section>
+
+<section class="section offers" id="preise" aria-labelledby="offers-title">
+  <div class="wrap">
+    <div class="offers__head">
+      <h2 id="offers-title" class="display h2">Wie wir zusammenarbeiten können</h2>
+      <p>Die Preise stehen hier, damit du vor dem Gespräch weißt, woran du bist. Es sind Endpreise.</p>
+    </div>
+    <div class="offers__grid">
+      <article class="offer offer--main" aria-labelledby="offer-main">
+        <div class="offer__top">
+          <h3 id="offer-main" class="offer__name">Drei Monate Begleitung</h3>
+          <p class="offer__price"><span class="display">3.000 €</span> <span class="offer__per">für 3 Monate</span></p>
+        </div>
+        <p class="offer__for">Wenn mehrere Bereiche deines Lebens gleichzeitig wackeln und du jemanden an deiner Seite willst, bis es wieder trägt.</p>
+        <h4 class="offer__inc-title">Das ist dabei</h4>
+        <ul class="offer__list">
+          <li>Eine erste Sitzung mit 90 Minuten: Ziele, Erklärung, Plan</li>
+          <li>Jede Woche eine feste Sitzung, 60 bis 90 Minuten</li>
+          <li>Zusätzliche Termine, wenn es brennt. Die kosten nichts extra.</li>
+          <li>WhatsApp zwischen den Sitzungen. Ich antworte spätestens nach 12 Stunden, meistens sofort.</li>
+          <li>Geführte Meditationen zum Nachhören</li>
+          <li>Ein Erfolgsjournal für den Abend</li>
+          <li>Ein 12-Wochen-Programm für mehr Selbstbewusstsein, Selbstwert, Selbstvertrauen und Selbstliebe</li>
+        </ul>
+        <p class="offer__promise">Ich will, dass du am Ende ein echtes Ergebnis hast, und tue dafür alles, was in meiner Hand liegt.</p>
+        <div class="offer__foot">
+          <a class="btn btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Klarheits-Gespräch buchen</a>
+          <p class="offer__terms">Ratenzahlung nach Absprache. Eine vorher gebuchte Einzelsitzung rechne ich an.</p>
+        </div>
+      </article>
+      <div class="offers__side">
+        <article class="offer offer--single" aria-labelledby="offer-single">
+          <div class="offer__top">
+            <h3 id="offer-single" class="offer__name">Einzelsitzung</h3>
+            <p class="offer__price"><span class="display">200 €</span></p>
+          </div>
+          <p class="offer__for">Wenn dich ein bestimmtes Thema gerade festhält oder du erst einmal erleben willst, wie sich diese Arbeit anfühlt.</p>
+          <ul class="offer__list">
+            <li>Ein kurzer Fragebogen vorab</li>
+            <li>Eine Sitzung, 60 bis 90 Minuten</li>
+            <li>Ein Plan für die Tage danach</li>
+            <li>Nach 48 Stunden melde ich mich bei dir, damit du dranbleibst und das Besprochene wirklich umsetzt</li>
+          </ul>
+          <a class="btn btn--line" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Einzelsitzung.%20Es%20geht%20um%20Folgendes%3A%20" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2c-4.9 0-8.8 3.5-8.8 7.9 0 2 .8 3.8 2.2 5.2l-.9 3.9 4-1.9c1.1.4 2.3.6 3.5.6 4.9 0 8.8-3.5 8.8-7.8S16.9 3.2 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="8.4" cy="11.2" r="1.05" fill="currentColor"/><circle cx="12" cy="11.2" r="1.05" fill="currentColor"/><circle cx="15.6" cy="11.2" r="1.05" fill="currentColor"/></svg><span>Einzelsitzung anfragen</span></a>
+        </article>
+        <article class="offer offer--call" aria-labelledby="offer-call">
+          <div class="offer__top">
+            <h3 id="offer-call" class="offer__name">Klarheits-Gespräch</h3>
+            <p class="offer__price"><span class="display">kostenfrei</span></p>
+          </div>
+          <p class="offer__for">30 Minuten per Video. Wir schauen, wo du stehst, was dich festhält und ob ich der Richtige für dich bin. Danach entscheidest du in Ruhe.</p>
+          <a class="btn btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Termin auswählen</a>
+        </article>
+      </div>
+    </div>
+    <figure class="big-quote">
+      <blockquote><p>„Ja, es ist Arbeit, aber welche, die sich wirklich lohnt. Und ja, es kostet Geld. Aber es ist mehr wert als jeder Urlaub oder jeder Konsum.“</p></blockquote>
+      <figcaption><span class="big-quote__name">Nicole</span> <span>auf Facebook</span> <button type="button" class="linkbtn" data-original="assets/img/review-nicole.jpg" data-w="668" data-h="414" data-name="Nicole">Original ansehen</button></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section reviews" id="erfahrungen" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="reviews__head">
+      <h2 id="reviews-title" class="display h2">Was Klientinnen geschrieben haben</h2>
+      <p>Auszüge aus Bewertungen und Nachrichten. Bei jeder kannst du dir das Original ansehen.</p>
+    </div>
+    <div class="reviews__grid">
+      <figure class="review review--featured">
+        <blockquote><p>„Es ist unglaublich, wie gut es mir jetzt geht. Und wie ich wieder in meine selbstermächtigte Kraft komme.“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Tina</span>
+          <span class="review__meta">Trustpilot, April 2023</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-tina.jpg" data-w="707" data-h="372" data-name="Tina">Original ansehen</button>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote><p>„Dank dir ist mein Leben immer wieder zauberhaft und ich kann Emil alles für mich Wichtige im Leben mitgeben. Einfach eine richtig gute Mama sein.“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Nicole</span>
+          <span class="review__meta">Facebook, Januar 2024</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-nicole.jpg" data-w="668" data-h="414" data-name="Nicole">Original ansehen</button>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote><p>„Ich sitze gerade in meinem neuen Büro und freu mich total!!! Danke nochmal für alles, was Du für mich getan hast!!! An diesem Wochenende und in den Monaten zuvor!!!“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Anja</span>
+          <span class="review__meta">WhatsApp</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-anja.jpg" data-w="431" data-h="212" data-name="Anja">Original ansehen</button>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote><p>„Er ist ein super bodenständiger Coach voller positiver Energie. Er macht keinen Hokuspokus, sondern einfache, simple Dinge, die man vielleicht vergessen hat.“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Julienne</span>
+          <span class="review__meta">Facebook</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-julienne.jpg" data-w="477" data-h="273" data-name="Julienne">Original ansehen</button>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote><p>„Alan ist ein sehr einfühlsamer Coach und weiß genau, was er tut, auch wenn im Prozess mal was „außer Plan“ läuft.“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Tanja</span>
+          <span class="review__meta">Facebook, April 2019</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-tanja.jpg" data-w="694" data-h="205" data-name="Tanja">Original ansehen</button>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote><p>„Er weiss die blinden Flecken aufzuspüren. Die Session mit Alan war sehr aufschlussreich und hat mir Klarheit gebracht.“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Nadja</span>
+          <span class="review__meta">Facebook, Oktober 2020</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-nadja.jpg" data-w="689" data-h="167" data-name="Nadja">Original ansehen</button>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote><p>„Ich hab von ihm wertvolle Tools an die Hand bekommen, die ich auch weiterhin anwende, wenn ich es brauche. Durch Alan habe ich sehr viel über mich selbst gelernt.“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Saskia</span>
+          <span class="review__meta">Trustpilot, März 2023</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-saskia.jpg" data-w="657" data-h="372" data-name="Saskia">Original ansehen</button>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote><p>„Nun weiß ich, wie ich selbst zu einer Beziehung stehe, wen ich genau möchte und was ich dazu beitragen darf, um ihn in mein Leben zu holen.“</p></blockquote>
+        <figcaption>
+          <span class="review__name">Ingrid</span>
+          <span class="review__meta">Trustpilot, April 2023</span>
+          <button type="button" class="linkbtn" data-original="assets/img/review-ingrid.jpg" data-w="707" data-h="399" data-name="Ingrid">Original ansehen</button>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="reviews__videos">
+      <figure class="video video--row">
+  <div class="video__frame" data-youtube="CF3XPPq_bpc" data-title="Michaela">
+    <button type="button" class="video__play" aria-label="Video von Michaela abspielen">
+      <picture>
+        <source type="image/webp" srcset="assets/img/video-michaela.webp">
+        <img src="assets/img/video-michaela.jpg" alt="" width="225" height="412" loading="lazy" decoding="async">
+      </picture>
+      <span class="video__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
+    </button>
+  </div>
+  <figcaption>
+    <span class="video__name">Michaela</span>
+    <span class="video__context">Begleitung</span>
+    <blockquote class="video__quote"><p>„Du hast mit mir meine Handbremse gelöst, und dafür bin ich dir unendlich dankbar. Denn sonst würde ich heute nicht meine Freiheit leben.“</p></blockquote>
+  </figcaption>
+</figure>
+      <figure class="video video--row">
+  <div class="video__frame" data-youtube="TRwkLgVtjoc" data-title="Susi">
+    <button type="button" class="video__play" aria-label="Video von Susi abspielen">
+      <picture>
+        <source type="image/webp" srcset="assets/img/video-susi.webp">
+        <img src="assets/img/video-susi.jpg" alt="" width="225" height="412" loading="lazy" decoding="async">
+      </picture>
+      <span class="video__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
+    </button>
+  </div>
+  <figcaption>
+    <span class="video__name">Susi</span>
+    <span class="video__context">Einzelsitzung</span>
+    <blockquote class="video__quote"><p>„Wir haben es geschafft, innerhalb von wenigen Minuten dieses verwirrte Problem aus einer ganz anderen Sichtweise zu betrachten.“</p></blockquote>
+  </figcaption>
+</figure>
+    </div>
+  </div>
+</section>
+
+<section class="section fit" aria-labelledby="fit-title">
+  <div class="wrap">
+    <h2 id="fit-title" class="display h2">Ob wir zusammenpassen</h2>
+    <div class="fit__grid">
+      <div class="fit__col fit__col--yes">
+        <h3>Das passt, wenn</h3>
+        <ul>
+          <li>du merkst, dass es so nicht weitergehen kann, und wirklich etwas verändern willst.</li>
+          <li>du bereit bist, ehrlich hinzuschauen, auch wenn es unbequem wird.</li>
+          <li>du zwischen den Sitzungen umsetzt, was wir erarbeiten.</li>
+          <li>du die Verantwortung für dein Leben übernimmst und dabei jemanden an deiner Seite willst.</li>
+        </ul>
+      </div>
+      <div class="fit__col fit__col--no">
+        <h3>Das passt nicht, wenn</h3>
+        <ul>
+          <li>du jemanden suchst, der die Arbeit für dich macht.</li>
+          <li>du eine schnelle Lösung willst, ohne selbst etwas zu verändern.</li>
+          <li>du gerade akute ärztliche oder psychotherapeutische Hilfe brauchst. Dann ist eine Ärztin oder ein Therapeut der richtige erste Schritt.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fit__note">Wenn ich merke, dass ich dir nicht helfen kann, sage ich dir das im Gespräch offen und auch, wo du besser aufgehoben bist. Ich begleite nur Frauen, bei denen ich überzeugt bin, dass ich wirklich etwas bewegen kann.</p>
+  </div>
+</section>
+
+<section class="section faq" id="fragen" aria-labelledby="faq-title">
+  <div class="wrap faq__grid">
+    <h2 id="faq-title" class="display h2">Was du vielleicht noch wissen willst</h2>
+    <div class="faq__list">
+      <details class="qa">
+        <summary><span>Ist das eine Therapie?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Nein. Ich bin Coach, kein Psychotherapeut, kein Psychologe und kein Heilpraktiker. Meine Arbeit ersetzt keine Psychotherapie und keine ärztliche Behandlung.</p>
+          <p>Ich begleite Menschen, die in ihrem Leben feststecken und etwas verändern wollen. Wenn ich merke, dass du etwas anderes brauchst, sage ich dir das.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Mit welchen Methoden arbeitest du?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Mit Hypnose, Kinesiologie, NLP und weiteren Techniken aus der Arbeit mit dem Unterbewusstsein. Damit lösen wir alte Glaubenssätze und Muster auf oder geben ihnen eine neue Bedeutung. Und wir verankern das, was du stattdessen erleben willst.</p>
+          <p>Welche Methode wir wann nutzen, richte ich nach dir und deinem Thema.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Ich habe mit Männern schlechte Erfahrungen gemacht. Ist das ein Problem?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>So geht es vielen Frauen, die zu mir kommen. Im Klarheits-Gespräch merkst du schnell, ob du dich bei mir sicher fühlst. Wenn nicht, ist das völlig in Ordnung, und du schuldest mir keine Erklärung.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Funktioniert das online genauso gut?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Ja. Viele finden es sogar leichter, weil sie in ihrer gewohnten Umgebung schneller zur Ruhe kommen. Du brauchst nur einen ruhigen Raum und eine stabile Internetverbindung.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Wie schnell merke ich etwas?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Nach meiner Erfahrung merken die meisten schon nach der ersten Sitzung einen deutlichen Unterschied. Damit die Veränderung im Alltag hält, braucht es mehrere Sitzungen und Begleitung dazwischen. Deshalb empfehle ich die drei Monate.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Kann ich in Raten zahlen?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Ja. Wir finden im Gespräch eine Lösung, die für dich passt. Ich bin auch offen dafür, ein kleineres Paket zu schnüren.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Was passiert nach den drei Monaten?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Wenn du weitermachen möchtest, kannst du auch längere Zeiträume buchen. Dafür gibt es einen Rabatt. Eine Klientin habe ich fast zwei Jahre begleitet.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Arbeitest du auch mit Paaren?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Ja. Wenn eure Beziehung wackelt, arbeiten wir in gemeinsamen Sitzungen und in Einzelsitzungen mit jedem von euch.</p>
+          <p><a class="textlink" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20wir%20interessieren%20uns%20f%C3%BCr%20Paarsitzungen.%20" target="_blank" rel="noopener">Paarsitzungen per WhatsApp anfragen</a></p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary><span>Können wir uns auch persönlich treffen?</span><span class="qa__sign" aria-hidden="true"></span></summary>
+        <div class="qa__body">
+          <p>Wenn du auf Bali bist, gern. Ich kann auch zu dir kommen, egal wo du lebst. Das ist dann deutlich aufwendiger und entsprechend teurer. Sprich mich einfach darauf an.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="kontakt" aria-labelledby="final-title">
+  <div class="final__light" aria-hidden="true"><svg class="palm" viewBox="0 0 800 1000" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M-60 800 C150 560 330 330 640 190" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M-6 738 Q-10 686 -21 681 Q-19 689 -6 738Z"/><path d="M-6 738 Q34 747 72 775 Q39 736 -6 738Z"/><path d="M51 672 Q46 605 29 599 Q33 609 51 672Z"/><path d="M51 672 Q120 691 187 734 Q132 665 51 672Z"/><path d="M74 646 Q67 570 50 562 Q55 573 74 646Z"/><path d="M74 646 Q155 665 232 714 Q167 637 74 646Z"/><path d="M110 605 Q104 513 86 503 Q90 517 110 605Z"/><path d="M110 605 Q198 628 282 687 Q211 601 110 605Z"/><path d="M138 575 Q124 484 96 478 Q106 491 138 575Z"/><path d="M138 575 Q226 605 314 664 Q243 571 138 575Z"/><path d="M168 542 Q164 428 141 415 Q143 432 168 542Z"/><path d="M168 542 Q252 566 332 626 Q264 543 168 542Z"/><path d="M196 513 Q181 408 151 400 Q162 415 196 513Z"/><path d="M196 513 Q291 546 385 616 Q309 515 196 513Z"/><path d="M228 481 Q217 378 194 368 Q201 383 228 481Z"/><path d="M228 481 Q321 526 418 603 Q344 490 228 481Z"/><path d="M249 461 Q252 352 236 339 Q232 354 249 461Z"/><path d="M249 461 Q333 487 416 543 Q348 456 249 461Z"/><path d="M277 435 Q267 336 244 326 Q251 340 277 435Z"/><path d="M277 435 Q365 479 457 554 Q387 445 277 435Z"/><path d="M320 396 Q324 301 308 290 Q303 303 320 396Z"/><path d="M320 396 Q399 425 476 485 Q412 401 320 396Z"/><path d="M341 378 Q345 283 335 270 Q330 284 341 378Z"/><path d="M341 378 Q417 418 498 483 Q438 387 341 378Z"/><path d="M382 346 Q383 258 371 247 Q369 259 382 346Z"/><path d="M382 346 Q456 392 537 465 Q478 363 382 346Z"/><path d="M410 324 Q414 255 406 246 Q402 256 410 324Z"/><path d="M441 302 Q452 237 452 228 Q442 236 441 302Z"/><path d="M441 302 Q494 329 547 379 Q505 314 441 302Z"/><path d="M490 270 Q499 224 499 217 Q491 222 490 270Z"/><path d="M490 270 Q526 298 567 340 Q540 283 490 270Z"/><path d="M519 252 Q528 217 529 212 Q522 216 519 252Z"/><path d="M519 252 Q557 274 596 312 Q566 263 519 252Z"/><path d="M568 225 Q571 212 571 210 Q569 211 568 225Z"/><path d="M568 225 Q581 237 596 253 Q586 232 568 225Z"/><path d="M593 212 Q595 204 595 203 Q594 204 593 212Z"/><path d="M593 212 Q600 217 608 225 Q603 215 593 212Z"/><path d="M-80 430 C120 340 290 190 520 70" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M-8 394 Q1 346 -0 343 Q-8 345 -8 394Z"/><path d="M-8 394 Q29 419 68 465 Q39 408 -8 394Z"/><path d="M11 384 Q20 337 19 334 Q11 335 11 384Z"/><path d="M11 384 Q52 422 102 481 Q71 404 11 384Z"/><path d="M48 363 Q60 308 62 305 Q51 306 48 363Z"/><path d="M48 363 Q99 403 158 472 Q117 385 48 363Z"/><path d="M84 342 Q93 282 89 279 Q80 281 84 342Z"/><path d="M84 342 Q143 379 206 450 Q159 361 84 342Z"/><path d="M117 321 Q122 241 114 238 Q109 242 117 321Z"/><path d="M117 321 Q183 365 254 446 Q202 344 117 321Z"/><path d="M140 306 Q146 223 140 219 Q133 223 140 306Z"/><path d="M140 306 Q208 351 283 433 Q229 328 140 306Z"/><path d="M177 282 Q181 215 173 212 Q169 215 177 282Z"/><path d="M177 282 Q247 326 325 404 Q270 298 177 282Z"/><path d="M213 258 Q224 188 222 184 Q212 186 213 258Z"/><path d="M213 258 Q273 292 336 359 Q288 274 213 258Z"/><path d="M247 236 Q256 163 250 159 Q241 162 247 236Z"/><path d="M247 236 Q314 278 388 354 Q334 254 247 236Z"/><path d="M274 218 Q328 247 387 302 Q344 226 274 218Z"/><path d="M302 200 Q310 129 306 126 Q298 128 302 200Z"/><path d="M302 200 Q356 236 415 302 Q371 219 302 200Z"/><path d="M341 174 Q347 119 342 117 Q337 119 341 174Z"/><path d="M341 174 Q390 210 444 273 Q406 193 341 174Z"/><path d="M376 152 Q382 103 379 100 Q374 102 376 152Z"/><path d="M376 152 Q413 182 456 231 Q427 167 376 152Z"/><path d="M415 129 Q421 94 420 92 Q414 93 415 129Z"/><path d="M415 129 Q443 145 473 176 Q451 135 415 129Z"/><path d="M439 115 Q443 90 442 89 Q438 90 439 115Z"/><path d="M439 115 Q458 130 480 155 Q465 122 439 115Z"/><path d="M476 93 Q479 83 480 83 Q477 83 476 93Z"/><path d="M476 93 Q483 100 491 109 Q486 97 476 93Z"/><path d="M40 1020 C250 860 480 740 790 700" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M98 977 Q104 933 101 921 Q95 933 98 977Z"/><path d="M98 977 Q139 996 180 1024 Q147 982 98 977Z"/><path d="M135 951 Q185 979 235 1020 Q195 965 135 951Z"/><path d="M177 924 Q193 849 193 828 Q178 847 177 924Z"/><path d="M207 905 Q221 840 217 821 Q204 838 207 905Z"/><path d="M207 905 Q264 941 325 986 Q280 917 207 905Z"/><path d="M237 887 Q257 819 258 799 Q241 816 237 887Z"/><path d="M237 887 Q290 931 350 986 Q308 911 237 887Z"/><path d="M275 866 Q331 912 393 972 Q349 892 275 866Z"/><path d="M303 851 Q329 759 334 731 Q311 754 303 851Z"/><path d="M303 851 Q369 893 436 953 Q384 873 303 851Z"/><path d="M333 836 Q359 757 363 733 Q340 751 333 836Z"/><path d="M333 836 Q403 885 477 952 Q422 862 333 836Z"/><path d="M369 819 Q389 746 390 724 Q372 742 369 819Z"/><path d="M369 819 Q431 877 500 955 Q451 858 369 819Z"/><path d="M420 797 Q444 715 448 691 Q427 711 420 797Z"/><path d="M420 797 Q480 860 551 942 Q504 839 420 797Z"/><path d="M459 782 Q490 704 500 680 Q473 697 459 782Z"/><path d="M484 772 Q538 819 596 881 Q554 802 484 772Z"/><path d="M538 754 Q569 690 583 671 Q556 683 538 754Z"/><path d="M538 754 Q585 801 640 861 Q603 784 538 754Z"/><path d="M567 746 Q597 682 609 663 Q584 675 567 746Z"/><path d="M567 746 Q607 788 653 844 Q621 776 567 746Z"/><path d="M611 734 Q637 689 650 676 Q627 683 611 734Z"/><path d="M651 724 Q675 750 703 784 Q684 742 651 724Z"/><path d="M694 715 Q706 693 712 686 Q701 690 694 715Z"/><path d="M694 715 Q711 738 732 767 Q719 732 694 715Z"/><path d="M755 705 Q760 697 763 694 Q758 695 755 705Z"/><path d="M755 705 Q760 714 768 724 Q764 711 755 705Z"/></g></svg></div>
+  <div class="wrap final__inner">
+    <div class="final__main">
+      <h2 id="final-title" class="display final__title">Erzähl mir, wo du gerade stehst.</h2>
+      <p class="final__text">Buch dir ein kostenfreies Klarheits-Gespräch. Du erzählst, ich höre zu, und am Ende weißt du, ob ich dir helfen kann.</p>
+      <div class="final__cta">
+        <a class="btn btn--primary btn--big" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Kostenfreies Klarheits-Gespräch buchen</a>
+        <p class="final__note">30 Minuten per Video, kostenfrei und unverbindlich.</p>
+      </div>
+    </div>
+    <div class="final__wa">
+      <picture>
+        <source type="image/webp" srcset="assets/img/alan-avatar-160.webp">
+        <img class="avatar avatar--alan" src="assets/img/alan-avatar-160.jpg" alt="Alan Bacior" width="72" height="72" loading="lazy">
+      </picture>
+      <div>
+        <p>Wenn dir ein Gespräch gerade zu viel ist, schreib mir auf WhatsApp. Ich antworte dir selbst.</p>
+        <a class="btn btn--line" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20ich%20habe%20deine%20Seite%20gelesen%20und%20m%C3%B6chte%20dir%20kurz%20schreiben%2C%20worum%20es%20bei%20mir%20geht%3A%20" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2c-4.9 0-8.8 3.5-8.8 7.9 0 2 .8 3.8 2.2 5.2l-.9 3.9 4-1.9c1.1.4 2.3.6 3.5.6 4.9 0 8.8-3.5 8.8-7.8S16.9 3.2 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="8.4" cy="11.2" r="1.05" fill="currentColor"/><circle cx="12" cy="11.2" r="1.05" fill="currentColor"/><circle cx="15.6" cy="11.2" r="1.05" fill="currentColor"/></svg><span>Per WhatsApp schreiben</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <img src="assets/img/logo-ab.png" alt="" width="38" height="30">
+    <p>© 2026 Alan Bacior Coaching</p>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+    <p class="site-footer__note">Mein Coaching ersetzt keine Psychotherapie und keine ärztliche Behandlung.</p>
+  </div>
+</footer>
+
+<div class="mobile-bar" id="mobile-bar" hidden>
+  <a class="btn btn--primary" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Klarheits-Gespräch buchen</a>
+  <a class="btn btn--line btn--icon" href="https://wa.me/6285337014244?text=Hallo%20Alan%2C%20ich%20habe%20deine%20Seite%20gelesen%20und%20m%C3%B6chte%20dir%20kurz%20schreiben%2C%20worum%20es%20bei%20mir%20geht%3A%20" target="_blank" rel="noopener" aria-label="Per WhatsApp schreiben"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2c-4.9 0-8.8 3.5-8.8 7.9 0 2 .8 3.8 2.2 5.2l-.9 3.9 4-1.9c1.1.4 2.3.6 3.5.6 4.9 0 8.8-3.5 8.8-7.8S16.9 3.2 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="8.4" cy="11.2" r="1.05" fill="currentColor"/><circle cx="12" cy="11.2" r="1.05" fill="currentColor"/><circle cx="15.6" cy="11.2" r="1.05" fill="currentColor"/></svg></a>
+</div>
+
+<dialog class="original" id="original" aria-labelledby="original-title">
+  <form method="dialog"><button class="original__close" aria-label="Schließen">×</button></form>
+  <p class="original__title" id="original-title"></p>
+  <img id="original-img" alt="">
+</dialog>
+
+<script>window.__ORIGINAL_OF = "Originalbeitrag von {name}";</script>
+<script src="assets/main.js?v=202610161206" defer></script>
 </body>
 </html>
