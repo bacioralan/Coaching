@@ -467,8 +467,21 @@ button { font: inherit; }
 .original img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
 
 /* Rechtstexte */
-.legal { padding-top: 1rem; }
-.legal .h2 { margin-bottom: 2rem; }
+.legal { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+.legal .h2 { margin-bottom: 2.5rem; }
+.legal__body { font-size: var(--fs-small); line-height: 1.7; }
+.legal__body h2 {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .004em;
+  font-size: clamp(1.75rem, 3vw, 2.25rem); line-height: 1; color: var(--ink);
+  margin: 3.5rem 0 1.25rem; padding-top: 2rem; border-top: 1px solid var(--line);
+}
+.legal__body h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.legal__body h3 { font-family: var(--text); font-weight: 600; font-size: var(--fs-body); line-height: 1.35; color: var(--ink); margin: 2rem 0 .6rem; }
+.legal__body h2 + h3 { margin-top: 0; }
+.legal__address { font-size: var(--fs-body); line-height: 1.55; color: var(--ink); }
+.legal__body .textlink { font-size: inherit; }
+.legal__back { margin-top: 3.5rem; }
+.legal + .site-footer { border-top: 1px solid var(--line); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
