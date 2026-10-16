@@ -468,7 +468,7 @@ button { font: inherit; }
 
 /* Rechtstexte */
 .legal { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
-.legal .h2 { margin-bottom: 2.5rem; }
+.legal .h2 { margin-bottom: 2.5rem; max-width: none; font-size: clamp(2.1rem, 8.4vw, 3.5rem); overflow-wrap: break-word; hyphens: auto; }
 .legal__body { font-size: var(--fs-small); line-height: 1.7; }
 .legal__body h2 {
   font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .004em;
@@ -481,6 +481,11 @@ button { font: inherit; }
 .legal__address { font-size: var(--fs-body); line-height: 1.55; color: var(--ink); }
 .legal__body .textlink { font-size: inherit; }
 .legal__back { margin-top: 3.5rem; }
+.legal__stand { color: var(--muted); }
+.legal__body ul { margin: 0 0 1em; padding-left: 1.2rem; }
+.legal__body li { margin-bottom: .35rem; }
+.legal__body li::marker { color: var(--sage); }
+.legal__body strong { color: var(--ink); font-weight: 600; }
 .legal + .site-footer { border-top: 1px solid var(--line); }
 
 @media (prefers-reduced-motion: reduce) {
